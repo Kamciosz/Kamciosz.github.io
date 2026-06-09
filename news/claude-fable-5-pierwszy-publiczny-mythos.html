@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Claude Fable 5 - pierwszy publiczny Mythos — STEM News</title>
+<meta name="description" content="Anthropic 9 czerwca 2026 wydał Claude Fable 5 - pierwszy publiczny model klasy Mythos. SWE-Bench Pro 80.3%, cena $10/$50, dostępny w Claude API, AWS Bedrock, Vertex AI.">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link rel="alternate" type="application/rss+xml" title="STEM News RSS" href="/rss.xml">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<style>
+.article-body table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+.article-body th, .article-body td { border: 1px solid rgba(127,127,127,0.3); padding: 0.5rem 0.75rem; text-align: left; }
+.article-body th { background: rgba(127,127,127,0.1); font-weight: 600; }
+.article-body td code { font-size: 0.85em; }
+.image-gallery { margin: 2rem 0; padding-top: 1rem; border-top: 1px solid rgba(127,127,127,0.3); }
+.image-gallery h3 { margin-bottom: 1rem; }
+.image-gallery figure { margin: 1.5rem 0; }
+.image-gallery img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+.image-gallery figcaption { margin-top: 0.5rem; font-size: 0.9rem; color: rgba(127,127,127,0.85); text-align: center; font-style: italic; }
+.article-body ul { padding-left: 1.5rem; }
+.article-body li { margin: 0.4rem 0; }
+.article-body h2 { margin-top: 2rem; border-bottom: 1px solid rgba(127,127,127,0.2); padding-bottom: 0.5rem; }
+.article-body h3 { margin-top: 1.5rem; }
+.article-body code { background: rgba(127,127,127,0.15); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.9em; }
+.article-body strong { color: #d97706; }
+</style>
+
+</head>
+<body>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a href="/" class="logo"><span class="logo-bracket">[</span>stem<span class="logo-bracket">]</span></a>
+    <nav class="nav">
+      <a href="/?filter=all">Wszystkie</a>
+      <a href="/?filter=ai">AI/ML</a>
+      <a href="/?filter=security">Security</a>
+      <a href="/?filter=hardware">Hardware</a>
+      <a href="/?filter=opensource">Open source</a>
+      <a href="/rss.xml">RSS</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">◐</button>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <header class="article-header">
+    <div class="article-meta">
+      <span>2026-06-09</span>
+      <span>·</span>
+      <span>4 min czytania</span>
+      <span>·</span>
+      <span>10 źródeł</span>
+    </div>
+    <h1>Claude Fable 5 — Anthropic zdejmuje blokadę. Pierwszy publiczny Mythos</h1>
+  </header>
+  <div class="article-body">
+<p><strong>Data:</strong> 2026-06-09 · <strong>Źródła:</strong> Anthropic, The Verge, TechCrunch, CNBC, VentureBeat, SecurityWeek, AWS, Anthropic docs · <strong>Czas czytania:</strong> ~4 min</p>
+<hr>
+<h2>Co się stało</h2>
+<p>Anthropic 9 czerwca 2026 wydał <strong>Claude Fable 5</strong> ($10/$50 za M tokenów) — pierwszy model klasy Mythos dopuszczony do publicznego użytku. Razem z nim wypuszczono <strong>Claude Mythos 5</strong> (ten sam model, częściowo zdjęte safety guards, tylko dla Project Glasswing partnerów). To dual-release: Fable 5 + Mythos 5 = ten sam model, dwa opakowania.</p>
+<h2>Kluczowe liczby</h2>
+<ul>
+<li><strong>$10/$50</strong> — cena Fable 5 per M tokenów (input/output). 2× drożej od Opus 4.8 ($5/$25), 5× taniej od wycofanego Mythos Preview ($20/$100).</li>
+<li><strong>80.3%</strong> — SWE-Bench Pro (agentic coding). vs GPT-5.5 58.6%, Gemini 3.1 Pro 54.2%. Dwudziestodwupunktowa przepaść w kodowaniu.</li>
+<li><strong>29.3%</strong> — FrontierCode Diamond xhigh. 2× lepiej od Opus 4.8 (13.4%), 5× lepiej od GPT-5.5 (5.7%).</li>
+<li><strong>1932 ELO</strong> — GDPval-AA (knowledge work). vs Opus 4.8 1890, GPT-5.5 1769, Gemini 3.1 Pro 1314.</li>
+<li><strong>85.0%</strong> — OSWorld-Verified (computer use). Marginalnie za Mythos Preview (85.4%).</li>
+<li><strong>1M / 128K</strong> — context window (input / output).</li>
+<li><strong><5%</strong> — odsetek sesji Fable 5 triggerujących safety classifier (95% pure Fable).</li>
+<li><strong>30 dni</strong> — mandatory retention dla Mythos-class traffic, NIE używane do treningu.</li>
+<li><strong>22 czerwca</strong> — deadline darmowego dostępu w claude.ai Pro/Max/Team/Enterprise.</li>
+<li><strong>15</strong> — liczba krajów w Project Glasswing (z hundreds of organizations).</li>
+</ul>
+<h2>Dlaczego "Fable"</h2>
+<p>Anthropic przeskoczył z <strong>Opus 4.8</strong> (maj 2026) bezpośrednio do <strong>Fable 5</strong> — nie ma Fable 1-4. "Fable" (bajka) sygnalizuje <strong>Mythos-class, ale bezpieczny dla ogólnego użytku</strong>. To celowy pivot brandingowy po tym, jak w czerwcu branża dyskutowała o "AI too dangerous to release". Fable = opowieść/narracja, nie cyberweapon.</p>
+<h2>Sandwich architektura</h2>
+<p>Gdy Fable 5 classifier wykryje zapytanie z high-risk domeny (cyber, bio, chem, distillation), <strong>cicho przekierowuje do Opus 4.8</strong>. Użytkownik może nawet nie wiedzieć, który model odpowiedział.</p>
+<p>Trzy chronione domeny:</p>
+<ul>
+<li><strong>Cybersecurity</strong> — exploitation, offensive cyber, agentic hacking → fallback do Opus 4.8</li>
+<li><strong>Biology & chemistry</strong> — over-broad (planowane zwężenie dla legit biomedical research)</li>
+<li><strong>Distillation</strong> — extraction attacks do treningu konkurencyjnych modeli</li>
+</ul>
+<p>Fable 5 ma <strong>0% progress na offensive cyber tasks</strong> w blocking mode (classifier skutecznie blokuje). ExploitBench 78.0% to wynik <strong>Mythos 5</strong>, nie Fable 5.</p>
+<h2>Tier hierarchia Claude (po 9 czerwca 2026)</h2>
+<table>
+<thead><tr>
+<th>Tier</th>
+<th>Model</th>
+<th>Cena ($/M in/out)</th>
+<th>Status</th>
+</tr></thead><tbody>
+<tr>
+<td>Mythos-class (restricted)</td>
+<td>Claude Mythos 5</td>
+<td>$10/$50</td>
+<td>Tylko Project Glasswing</td>
+</tr>
+<tr>
+<td>**Mythos-class (public)**</td>
+<td>**Claude Fable 5**</td>
+<td>**$10/$50**</td>
+<td>**Nowy**</td>
+</tr>
+<tr>
+<td>Flagship</td>
+<td>Claude Opus 4.8</td>
+<td>$5/$25</td>
+<td>Poprzedni top tier</td>
+</tr>
+<tr>
+<td>Mid</td>
+<td>Claude Sonnet 4.6</td>
+<td>$3/$15</td>
+<td>Workhorse</td>
+</tr>
+<tr>
+<td>Small</td>
+<td>Claude Haiku 4.5</td>
+<td>$1/$5</td>
+<td>Szybki, tani</td>
+</tr>
+</tbody></table>
+<p>Fable 5 kosztuje 2× więcej niż Opus 4.8. Różnica uzasadniona jest <strong>premium benchmarkami</strong>, nie raw capability. Dodatkowe koszty: prompt caching 90% rabatu, US-only inference 1.1× multiplier.</p>
+<h2>Dostępność</h2>
+<table>
+<thead><tr>
+<th>Kanał</th>
+<th>Fable 5</th>
+<th>Mythos 5</th>
+</tr></thead><tbody>
+<tr>
+<td>Claude API</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>claude.ai Pro/Max/Team/Enterprise</td>
+<td>✅ (do 22.06 za darmo)</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Claude Code</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>AWS Bedrock</td>
+<td>✅ (`anthropic.claude-fable-5`, US East N. Virginia)</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Google Vertex AI</td>
+<td>✅ (`claude-fable-5`)</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Microsoft Foundry</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>**Project Glasswing**</td>
+<td>—</td>
+<td>✅</td>
+</tr>
+</tbody></table>
+<h2>Polska i chińscy resellerzy (stan 9.06 wieczór)</h2>
+<table>
+<thead><tr>
+<th>Provider</th>
+<th>Fable 5</th>
+<th>Max model</th>
+<th>ETA</th>
+</tr></thead><tbody>
+<tr>
+<td>**VSLLM**</td>
+<td>❌</td>
+<td>(brak)</td>
+<td>Wolny pipeline Anthropic</td>
+</tr>
+<tr>
+<td>**aigcbest.top** (NewAPI/0api)</td>
+<td>❌</td>
+<td>Opus 4.7</td>
+<td>Piątek-niedziela (12-14.06)</td>
+</tr>
+<tr>
+<td>**dmxapi.com**</td>
+<td>❌</td>
+<td>Opus 4.1</td>
+<td>1-2 tygodnie</td>
+</tr>
+<tr>
+<td>**siliconflow.cn**</td>
+<td>❌</td>
+<td>brak Claude</td>
+<td>(tylko Qwen/DeepSeek/GLM/Kimi)</td>
+</tr>
+<tr>
+<td>**nextai-code.com**</td>
+<td>❌</td>
+<td>Haiku 4-5</td>
+<td>—</td>
+</tr>
+<tr>
+<td>**Wei-Shaw/claude-relay-service**</td>
+<td>❌</td>
+<td>Opus 4.7</td>
+<td>self-host, GitHub 12k⭐</td>
+</tr>
+</tbody></table>
+<p>Szacunek cen u resellerów (po adapt, marża 50-100%): aigcbest ~¥35-70/M input, ~¥175-350/M output. W USD: $5-10/M input, $25-70/M output (taniej niż Claude bezpośrednio dla płacących kartą zagraniczną).</p>
+<h2>Open source vs closed</h2>
+<table>
+<thead><tr>
+<th>Model</th>
+<th>SWE-Bench Pro</th>
+<th>Pricing ($/M in/out)</th>
+<th>Tier</th>
+</tr></thead><tbody>
+<tr>
+<td>**Claude Fable 5**</td>
+<td>**80.3%**</td>
+<td>$10/$50</td>
+<td>Closed frontier</td>
+</tr>
+<tr>
+<td>DeepSeek V4 Pro</td>
+<td>77.4%</td>
+<td>$0.14/$0.28</td>
+<td>Open source</td>
+</tr>
+<tr>
+<td>Claude Opus 4.8</td>
+<td>69.2%</td>
+<td>$5/$25</td>
+<td>Closed</td>
+</tr>
+<tr>
+<td>GPT-5.5</td>
+<td>58.6%</td>
+<td>$5/$30</td>
+<td>Closed</td>
+</tr>
+<tr>
+<td>Gemini 3.1 Pro</td>
+<td>54.2%</td>
+<td>$1.25/$10 (preview)</td>
+<td>Closed</td>
+</tr>
+</tbody></table>
+<p>Wniosek: DeepSeek V4 daje 95% wartości Fable 5 za 1% ceny. Fable 5 ma sens tylko dla <strong>specific high-leverage tasks</strong>: long-horizon agentic coding, legacy migration 500K+ LOC, senior-level reasoning.</p>
+<h2>Co obserwować</h2>
+<ul>
+<li><strong>Reakcja OpenAI</strong> — GPT-5.6 w 1-2 tygodnie. Czy pójdą w dual-release?</li>
+<li><strong>Google Gemini</strong> — 3.1 Pro preview do GA czy czeka na 3.2?</li>
+<li><strong>Meta</strong> — Muse/Spark były setback, czy w ogóle wydadzą frontier?</li>
+<li><strong>aigcbest</strong> — ceny za 48-72h, marże prawdopodobnie 50-100%</li>
+<li><strong>Anthropic IPO</strong> — czerwiec 2026, Fable 5 to demo "responsible scaling"</li>
+<li><strong>Biomedical trusted-access</strong> — zapowiedziany program zwężenia bio/chem blokad</li>
+</ul>
+<h2>Praktyczny plan dla programistów</h2>
+<p><strong>Dziś:</strong> nic nie zmieniaj. Stack na Sonnet 4.6 / Opus 4.8 / DeepSeek V4 / Kimi K2.6.</p>
+<p><strong>Za tydzień:</strong> benchmark swojego najtrudniejszego real tasku na Fable 5 vs Opus 4.8. Zmierz: quality, latency, cost.</p>
+<p><strong>Za miesiąc:</strong> jeśli Fable 5 realnie bije Opus 4.8 na twoich taskach — przenieś <strong>specific high-leverage flows</strong> (legacy migration, complex refactor) na Fable 5. Reszta zostaje na tańszych.</p>
+<p><strong>Za kwartał:</strong> ceny u resellerów powinny spaść. Wtedy Fable 5 w $5-7/M input zaczyna mieć real ROI.</p>
+<h2>Stripe Ruby Migration — case study</h2>
+<p>50M-line codebase zmigrowany w <strong>1 dzień</strong> vs <strong>team of 2 months</strong> robiący to samo ręcznie. To nie marketing — real customer data z Project Glasswing partnerów. Fable 5 iteruje po plikach, pisze patch, uruchamia testy i naprawia własny błąd. To jest real use case, nie demo.</p>
+<h2>Źródła</h2>
+<ul>
+<li>Anthropic: https://www.anthropic.com/news/claude-fable-5-mythos-5</li>
+<li>The Verge: https://www.theverge.com/news/946725/anthropic-releases-claude-fable-5-mythos</li>
+<li>TechCrunch: https://techcrunch.com/2026/06/09/anthropic-released-claude-fable-5-its-most-powerful-model-publicly-days-after-warning-ai-is-getting-too-dangerous</li>
+<li>CNBC: https://www.cnbc.com/2026/06/09/anthropic-mythos-claude-fable-5.html</li>
+<li>SecurityWeek: https://www.securityweek.com/anthropic-launches-claude-fable-5-mythos-class-ai-with-cybersecurity-guardrails</li>
+<li>VentureBeat: https://venturebeat.com/technology/anthropic-brings-mythos-to-the-masses-with-claude-fable-5-its-most-powerful-generally-available-model-ever</li>
+<li>AWS blog: https://aws.amazon.com/blogs/aws/anthropic-claude-fable-5-on-aws-mythos-class-capabilities-with-built-in-safeguards-now-available</li>
+<li>Anthropic docs: https://docs.anthropic.com/en/docs/about-claude/models</li>
+<li>Reddit r/Anthropic: https://www.reddit.com/r/Anthropic/comments/1u1b1yj/introducing_claude_fable_5</li>
+<li>Digital Applied: https://www.digitalapplied.com/blog/claude-fable-5-mythos-5-release-benchmarks-2026</li>
+</ul>
+<hr>
+<p>*STEM News · auto-publikowane z wątku Discord 1512398228384120864 · GitHub Actions daily*</p>
+<p>*Rozszerzane przez <code>MiniMax-M3</code> (vsllm) · Vanilla HTML+CSS · GitHub Pages*</p>
+<p>!<a href="../assets/img/fable5/01_hero_fable5.png" target="_blank" rel="noopener noreferrer">Claude Fable 5 - hero</a></p>
+<p>!<a href="../assets/img/fable5/02_before_after.png" target="_blank" rel="noopener noreferrer">Before/After Fable 5</a></p>
+<p>!<a href="../assets/img/fable5/03_anthropic_tiers.png" target="_blank" rel="noopener noreferrer">Claude tiers - Haiku/Sonnet/Fable</a></p>
+<p>!<a href="../assets/img/fable5/04_ai_army.png" target="_blank" rel="noopener noreferrer">Global AI compute race</a></p>
+<p>!<a href="../assets/img/fable5/05_solo_developer.png" target="_blank" rel="noopener noreferrer">Solo developer vs hyperscalers</a></p>
+
+<div class="image-gallery">
+  <h3>Ilustracje</h3>
+  <figure><img src="/assets/img/fable5/01_hero_fable5.png" alt="Claude Fable 5 - edytorialny hero przedstawiający AI brain-like structure ze złotymi nodami"><figcaption>1. Hero - Claude Fable 5 jako złota sieć neuronowa w kosmosie</figcaption></figure>
+  <figure><img src="/assets/img/fable5/02_before_after.png" alt="Before/After - chaos czerwonych sieci vs porządek złotych ścieżek Fable 5"><figcaption>2. Porównanie: chaos vs porządek w architekturze Fable 5</figcaption></figure>
+  <figure><img src="/assets/img/fable5/03_anthropic_tiers.png" alt="Trzy mityczne stworzenia Claude tiers: mrówka Haiku, sowa Sonnet, feniks Fable"><figcaption>3. Tier hierarchia Claude - Haiku/Sonnet/Fable</figcaption></figure>
+  <figure><img src="/assets/img/fable5/04_ai_army.png" alt="Industrial-scale data center z kolorowymi światłami serwerów AWS/Google/Azure"><figcaption>4. Globalny wyścig compute - hyperscaler data centers</figcaption></figure>
+  <figure><img src="/assets/img/fable5/05_solo_developer.png" alt="Pojedynczy programista na wzgórzu patrzący na miasto pełne hologramowych billboardów AI"><figcaption>5. Solo developer vs hyperscalers - zmierzch czy świt?</figcaption></figure>
+  <figure><img src="/assets/img/fable5/06_open_source.png" alt="Magic-realizm: drewniana szafka z otwartą szufladą Open Source AI pełną skarbów"><figcaption>6. Open source AI - ukryty skarb w zasięgu ręki</figcaption></figure>
+</div>
+
+  </div>
+  <footer class="article-footer">
+    <a href="/" class="back-link">← Wszystkie newsy</a>
+    <div class="discord-refs">
+      <span>Discord msg IDs:</span>
+      <code>1514025417877749762, 1514025419266064584</code>
+    </div>
+  </footer>
+</article>
+</main>
+<footer class="footer">
+  <div class="container">
+    <p>STEM News · auto-publikowane z wątku Discord 1512398228384120864 · GitHub Actions daily</p>
+    <p class="muted">Rozszerzane przez <code>MiniMax-M3</code> (vsllm) · Vanilla HTML+CSS · GitHub Pages</p>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
