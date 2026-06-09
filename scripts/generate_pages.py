@@ -67,6 +67,8 @@ def estimate_reading_time(text: str) -> int:
     return max(1, len(text) // 1200)  # ~1200 chars/min
 
 
+SITE_URL = "https://kamciosz.github.io"
+
 def base_template(title: str, body: str, extra_head: str = "") -> str:
     return f"""<!DOCTYPE html>
 <html lang="pl">
@@ -202,7 +204,7 @@ def render_rss(news: list) -> str:
     items = []
     for entry in news[:30]:
         title = html.escape(entry["title"])
-        link = f"https://stem-news.example/news/{entry['slug']}.html"
+        link = f"{SITE_URL}/news/{entry['slug']}.html"
         pub = entry.get("last_ts", datetime.utcnow().isoformat())
         desc = re.sub(r"\*\*([^*]+)\*\*", "", entry["expanded_content"][:500])
         desc = html.escape(desc)
@@ -217,7 +219,7 @@ def render_rss(news: list) -> str:
 <rss version="2.0">
   <channel>
     <title>STEM News</title>
-    <link>https://stem-news.example/</link>
+    <link>{SITE_URL}/</link>
     <description>Codzienny przegląd AI, security, hardware i open source.</description>
     <language>pl</language>
 {chr(10).join(items)}

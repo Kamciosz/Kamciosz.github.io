@@ -2,13 +2,13 @@
 <rss version="2.0">
   <channel>
     <title>STEM News</title>
-    <link>https://stem-news.example/</link>
+    <link>https://kamciosz.github.io/</link>
     <description>Codzienny przegląd AI, security, hardware i open source.</description>
     <language>pl</language>
     <item>
       <title>Mac M-series + llama.cpp — 70B LLM w 32GB RAM</title>
-      <link>https://stem-news.example/news/mac-m-series-llama-cpp-70b-llm-w-32gb-ram.html</link>
-      <guid>https://stem-news.example/news/mac-m-series-llama-cpp-70b-llm-w-32gb-ram.html</guid>
+      <link>https://kamciosz.github.io/news/mac-m-series-llama-cpp-70b-llm-w-32gb-ram.html</link>
+      <guid>https://kamciosz.github.io/news/mac-m-series-llama-cpp-70b-llm-w-32gb-ram.html</guid>
       <pubDate>2026-06-09T13:17:18.065000+00:00</pubDate>
       <description>
 
@@ -18,8 +18,8 @@ W praktyce oznacza to, że Mac Mini M4 za $999 z 24GB RAM obsługuje modele 7B-1
     </item>
     <item>
       <title>WWDC 2026 keynote (8 czerwca, Apple Park Cupertino)</title>
-      <link>https://stem-news.example/news/wwdc-2026-keynote-8-czerwca-apple-park-cupertino.html</link>
-      <guid>https://stem-news.example/news/wwdc-2026-keynote-8-czerwca-apple-park-cupertino.html</guid>
+      <link>https://kamciosz.github.io/news/wwdc-2026-keynote-8-czerwca-apple-park-cupertino.html</link>
+      <guid>https://kamciosz.github.io/news/wwdc-2026-keynote-8-czerwca-apple-park-cupertino.html</guid>
       <pubDate>2026-06-09T11:32:20.838000+00:00</pubDate>
       <description>
 
@@ -29,8 +29,8 @@ Tim Cook otworzył keynote hasłem „the beginning of a new era of personal com
     </item>
     <item>
       <title>Apple zapowiedziało gruntowną przebudowę Siri AI: według Craiga Federighiego, SVP Software Engineering, asystent został „rebuilt from the ground up with AI at its core”.</title>
-      <link>https://stem-news.example/news/apple-zapowiedzialo-gruntowna-przebudowe-siri-ai-wedlug-craiga-federighiego-svp-.html</link>
-      <guid>https://stem-news.example/news/apple-zapowiedzialo-gruntowna-przebudowe-siri-ai-wedlug-craiga-federighiego-svp-.html</guid>
+      <link>https://kamciosz.github.io/news/apple-zapowiedzialo-gruntowna-przebudowe-siri-ai-wedlug-craiga-federighiego-svp-.html</link>
+      <guid>https://kamciosz.github.io/news/apple-zapowiedzialo-gruntowna-przebudowe-siri-ai-wedlug-craiga-federighiego-svp-.html</guid>
       <pubDate>2026-06-09T11:32:24.227000+00:00</pubDate>
       <description>
 
@@ -38,8 +38,8 @@ Apple zapowiedziało gruntowną przebudowę Siri AI: według Craiga Federighiego
     </item>
     <item>
       <title>Apple Intelligence 2.0 w apps</title>
-      <link>https://stem-news.example/news/apple-intelligence-2-0-w-apps.html</link>
-      <guid>https://stem-news.example/news/apple-intelligence-2-0-w-apps.html</guid>
+      <link>https://kamciosz.github.io/news/apple-intelligence-2-0-w-apps.html</link>
+      <guid>https://kamciosz.github.io/news/apple-intelligence-2-0-w-apps.html</guid>
       <pubDate>2026-06-09T11:32:27.550000+00:00</pubDate>
       <description>
 
@@ -51,8 +51,8 @@ W latach 2024-2025 funkcje AI w aplikacjach były opisywane jako bardziej izolow
     </item>
     <item>
       <title>iOS 27 Liquid Glass + developer APIs + implikacje rynkowe</title>
-      <link>https://stem-news.example/news/ios-27-liquid-glass-developer-apis-implikacje-rynkowe.html</link>
-      <guid>https://stem-news.example/news/ios-27-liquid-glass-developer-apis-implikacje-rynkowe.html</guid>
+      <link>https://kamciosz.github.io/news/ios-27-liquid-glass-developer-apis-implikacje-rynkowe.html</link>
+      <guid>https://kamciosz.github.io/news/ios-27-liquid-glass-developer-apis-implikacje-rynkowe.html</guid>
       <pubDate>2026-06-09T11:32:31.117000+00:00</pubDate>
       <description>
 
@@ -64,8 +64,8 @@ iOS 27 wygląda na jedną z ważniejszych aktualizacji systemu Apple z perspekty
     </item>
     <item>
       <title>Claude Mythos Preview</title>
-      <link>https://stem-news.example/news/claude-mythos-preview.html</link>
-      <guid>https://stem-news.example/news/claude-mythos-preview.html</guid>
+      <link>https://kamciosz.github.io/news/claude-mythos-preview.html</link>
+      <guid>https://kamciosz.github.io/news/claude-mythos-preview.html</guid>
       <pubDate>2026-06-09T11:55:54.977000+00:00</pubDate>
       <description>
 
@@ -77,8 +77,8 @@ SWE-bench Verif mierzy rozwiązywanie realnych issue’ów z GitHub w agentic sc
     </item>
     <item>
       <title>Google I/O 17 maja 2026 przyniosło największy w historii firmy pakiet ogłoszeń dotyczących agentów AI i multimodalności.</title>
-      <link>https://stem-news.example/news/google-i-o-17-maja-2026-przynioslo-najwiekszy-w-historii-firmy-pakiet-ogloszen-d.html</link>
-      <guid>https://stem-news.example/news/google-i-o-17-maja-2026-przynioslo-najwiekszy-w-historii-firmy-pakiet-ogloszen-d.html</guid>
+      <link>https://kamciosz.github.io/news/google-i-o-17-maja-2026-przynioslo-najwiekszy-w-historii-firmy-pakiet-ogloszen-d.html</link>
+      <guid>https://kamciosz.github.io/news/google-i-o-17-maja-2026-przynioslo-najwiekszy-w-historii-firmy-pakiet-ogloszen-d.html</guid>
       <pubDate>2026-06-09T11:55:59.794000+00:00</pubDate>
       <description>
 
@@ -90,8 +90,8 @@ Google buduje ten zestaw o</description>
     </item>
     <item>
       <title>OpenAI w sierpniu 2025 wypuścił GPT-OSS: pierwszy open-weight model firmy od czasu GPT-2 z 2019 roku.</title>
-      <link>https://stem-news.example/news/openai-w-sierpniu-2025-wypuscil-gpt-oss-pierwszy-open-weight-model-firmy-od-czas.html</link>
-      <guid>https://stem-news.example/news/openai-w-sierpniu-2025-wypuscil-gpt-oss-pierwszy-open-weight-model-firmy-od-czas.html</guid>
+      <link>https://kamciosz.github.io/news/openai-w-sierpniu-2025-wypuscil-gpt-oss-pierwszy-open-weight-model-firmy-od-czas.html</link>
+      <guid>https://kamciosz.github.io/news/openai-w-sierpniu-2025-wypuscil-gpt-oss-pierwszy-open-weight-model-firmy-od-czas.html</guid>
       <pubDate>2026-06-09T11:56:05.509000+00:00</pubDate>
       <description>
 
@@ -105,8 +105,8 @@ GPT-OSS jest pozycjonowa</description>
     </item>
     <item>
       <title>AMD MI400 + Helios rack</title>
-      <link>https://stem-news.example/news/amd-mi400-helios-rack.html</link>
-      <guid>https://stem-news.example/news/amd-mi400-helios-rack.html</guid>
+      <link>https://kamciosz.github.io/news/amd-mi400-helios-rack.html</link>
+      <guid>https://kamciosz.github.io/news/amd-mi400-helios-rack.html</guid>
       <pubDate>2026-06-09T11:56:10.316000+00:00</pubDate>
       <description>
 
@@ -118,8 +118,8 @@ MI400 i Helios to najpoważniejsza próba AMD wejścia w segment infrastruktury 
     </item>
     <item>
       <title>4 czerwca 2026 opublikowano [用户触发屏蔽词]26-45609, krytyczną podatność typu SSRF (CWE-918) w frameworku mcp-security dla Spring AI.</title>
-      <link>https://stem-news.example/news/4-czerwca-2026-opublikowano-26-45609-krytyczna-podatnosc-typu-ssrf-cwe-918-w-fra.html</link>
-      <guid>https://stem-news.example/news/4-czerwca-2026-opublikowano-26-45609-krytyczna-podatnosc-typu-ssrf-cwe-918-w-fra.html</guid>
+      <link>https://kamciosz.github.io/news/4-czerwca-2026-opublikowano-26-45609-krytyczna-podatnosc-typu-ssrf-cwe-918-w-fra.html</link>
+      <guid>https://kamciosz.github.io/news/4-czerwca-2026-opublikowano-26-45609-krytyczna-podatnosc-typu-ssrf-cwe-918-w-fra.html</guid>
       <pubDate>2026-06-09T11:56:15.540000+00:00</pubDate>
       <description>
 
