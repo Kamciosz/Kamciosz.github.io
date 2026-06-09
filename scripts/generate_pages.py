@@ -72,12 +72,13 @@ def base_template(title: str, body: str, extra_head: str = "") -> str:
 <html lang="pl">
 <head>
 <meta charset="utf-8">
+<base href="/stem-news-site/">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)} — STEM News</title>
 <meta name="description" content="STEM News — codzienny przegląd AI, security, hardware i open source.">
-<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
-<link rel="alternate" type="application/rss+xml" title="STEM News RSS" href="/rss.xml">
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="alternate" type="application/rss+xml" title="STEM News RSS" href="rss.xml">
+<link rel="stylesheet" href="assets/css/style.css">
 {extra_head}
 </head>
 <body>
