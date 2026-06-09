@@ -32,7 +32,7 @@ cd ~/Desktop/stem-news-site
 git init
 git add .
 git commit -m "feat: initial site"
-gh repo create stem-news --public --source=. --push
+gh repo create Kamciosz.github.io --public --source=. --push  # WAŻNE: nazwa musi być <user>.github.io żeby strona poszła pod root
 ```
 
 ### 2. GitHub Secrets
@@ -47,7 +47,7 @@ W `Settings → Pages`:
 - Source: `Deploy from a branch`
 - Branch: `main` / `(root)`
 
-Site będzie na `https://<user>.github.io/stem-news/`
+Site będzie na `https://kamciosz.github.io/` (repo nazwane `Kamciosz.github.io` = user GH Pages root)
 
 ### 4. Pierwszy manual run
 
