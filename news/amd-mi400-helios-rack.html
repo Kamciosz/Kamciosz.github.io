@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AMD MI400 + Helios rack — STEM News</title>
+<meta name="description" content="STEM News — codzienny przegląd AI, security, hardware i open source.">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link rel="alternate" type="application/rss+xml" title="STEM News RSS" href="/rss.xml">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+<body>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a href="/" class="logo"><span class="logo-bracket">[</span>stem<span class="logo-bracket">]</span></a>
+    <nav class="nav">
+      <a href="/?filter=all">Wszystkie</a>
+      <a href="/?filter=ai">AI/ML</a>
+      <a href="/?filter=security">Security</a>
+      <a href="/?filter=hardware">Hardware</a>
+      <a href="/?filter=opensource">Open source</a>
+      <a href="/rss.xml">RSS</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">◐</button>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <header class="article-header">
+    <div class="article-meta">
+      <span>2026-06-09</span>
+      <span>·</span>
+      <span>2 min czytania</span>
+      <span>·</span>
+      <span>6 źródeł</span>
+    </div>
+    <h1>AMD MI400 + Helios rack</h1>
+  </header>
+  <div class="article-body">
+<h3>Co się stało</h3>
+
+<p>AMD potwierdziło specyfikacje akceleratorów MI400 oraz platformy Helios, czyli pierwszego rack-scale systemu AMD przeznaczonego do AI training i inference. Cel wdrożenia to 2H 2026, a firma pozycjonuje Helios jako bezpośrednią alternatywę dla NVIDIA NVL72 i Google TPU pods, opartą na otwartych standardach OCP.</p>
+
+<h3>Kontekst</h3>
+
+<p>MI400 i Helios to najpoważniejsza próba AMD wejścia w segment infrastruktury AI na poziomie całych racków, a nie tylko pojedynczych GPU. NVIDIA zbudowała silną pozycję dzięki CUDA oraz systemom H100/B200, natomiast AMD stawia na kombinację mocniejszych parametrów per GPU, ROCm 7.0 i open standards.</p>
+
+<p>Helios ma korzystać z Open Rack Wide v3, formatu double-wide rozwijanego z udziałem Meta, a także z procesorów Zen 6 Epyc CPUs oraz Vulcano NICs opartych na Pensando DPUs. Strategia AMD jest czytelna: zaoferować hyperscalerom, takim jak AWS, Azure i Google, realną dywersyfikację supply chain po latach lock-in na NVIDIA CUDA + H100/B200. W tle jest też wcześniejszy kontrakt AMD z Microsoft na MI300X dla Azure oraz szansa wejścia MI400 do Meta, Oracle i innych klientów.</p>
+
+<p>Dla deweloperów AI kluczowy będzie ROCm 7.0. Według opisu platforma obsługuje większość top frameworków, w tym PyTorch, JAX i Triton, ale nadal pozostaje za CUDA pod względem ekosystemu. AMD zakłada jednak, że dla 90% zastosowań ROCm wystarcza, a open standards mogą przyspieszyć portowanie modeli i narzędzi.</p>
+
+<h3>Kluczowe liczby</h3>
+
+<ul>
+<li>MI400 ma oferować 432 GB HBM4 na GPU, w konfiguracji 12 stacków.</li>
+<li>Przepustowość pamięci per GPU wynosi 19.6 Tbps, a moc obliczeniowa 20 PFLOPS FP8 compute.</li>
+<li>Komunikacja scale-out ma osiągać 300 Gbps przez Ultra Accelerator Link.</li>
+<li>Helios rack-scale platform obejmuje 72 GPU MI400 per rack, 31 TB aggregate HBM4 oraz 1.4 PB/s aggregate bandwidth.</li>
+<li>Dla porównania NVIDIA B200 ma 192 GB HBM3e i około 8 PFLOPS FP8 per GPU, więc MI400 ma 2.25x więcej pamięci i 2.5x więcej compute per GPU.</li>
+<li>AMD zapowiedziało 20x wzrost rack-scale energy efficiency do 2030 vs 2024; model AI wymagający dziś 275 racków ma trenować się w &lt;1 pełnym racku przy 95% mniejszym zużyciu prądu.</li>
+</ul>
+<h3>Dlaczego to ważne</h3>
+
+<p>Dla rynku AI hardware MI400 jest bezpośrednim atakiem na dominację NVIDII. Jeśli AMD dowiezie Helios w 2H 2026, hyperscalerzy dostaną alternatywę dla infrastruktury NVIDIA NVL72, z podobną skalą 72 GPU per rack, ale osadzoną w otwartych standardach OCP. To może ograniczyć ryzyko zależności od jednego dostawcy i wzmocnić pozycję klientów negocjujących dostęp do akceleratorów AI.</p>
+
+<p>Dla inwestorów sygnał był natychmiastowy: cena akcji AMD po ogłoszeniu specyfikacji MI400 urosła o 12% w 24h. Rynek widzi możliwość wzrostu udziału AMD w data center AI z około 8% w 2025 do 20-25% w 2027.</p>
+
+<p>Ryzyka pozostają istotne. Produkcja HBM4 jest kontrolowana przez Samsung i SK Hynix, które priorytetyzują NVIDIA, więc AMD może mieć ograniczoną podaż w 2H 2026. Drugim ryzykiem jest software: jeśli ROCm 7.0 nie dorówna CUDA w edge cases, MI400 może sprzedawać się słabiej. Strategicznie AMD gra jednak w „open AI infrastructure”, czyli temat atrakcyjny dla regulatorów EU i klientów rządowych.</p>
+<div class="sources"><h3>Źródła</h3><ul><li><a href="https://www.nextplatform.com/compute/2026/02/23/amd-says-helios-racks-and-mi400-series-gpus-on-track-for-2h-2026/4092199" target="_blank" rel="noopener noreferrer">www.nextplatform.com/compute/2026/02/23/amd-says-helios-rack</a></li><li><a href="https://www.techpowerup.com/forums/threads/amd-previews-432-gb-hbm4-instinct-mi400-gpus-and-helios-rack-scale-ai-solution.337987" target="_blank" rel="noopener noreferrer">www.techpowerup.com/forums/threads/amd-previews-432-gb-hbm4-</a></li><li><a href="https://www.amd.com/en/newsroom/press-releases/2026-1-5-amd-and-its-partners-share-their-vision-for-ai-ev.html" target="_blank" rel="noopener noreferrer">www.amd.com/en/newsroom/press-releases/2026-1-5-amd-and-its-</a></li><li><a href="https://www.datacenterdynamics.com/en/news/amd-launches-instinct-mi350-gpus-unveils-double-wide-helios-ai-rack-scale-system" target="_blank" rel="noopener noreferrer">www.datacenterdynamics.com/en/news/amd-launches-instinct-mi3</a></li><li><a href="https://www.datacenterknowledge.com/data-center-chips/amd-bolsters-ai-chips-and-software-to-further-challenge-nvidia" target="_blank" rel="noopener noreferrer">www.datacenterknowledge.com/data-center-chips/amd-bolsters-a</a></li><li><a href="https://tbri.com/special-reports/amd-lays-out-its-road-map-to-erode-nvidias-dominance-in-the-ai-data-center" target="_blank" rel="noopener noreferrer">tbri.com/special-reports/amd-lays-out-its-road-map-to-erode-</a></li></ul></div>
+  </div>
+  <footer class="article-footer">
+    <a href="/" class="back-link">← Wszystkie newsy</a>
+    <div class="discord-refs">
+      <span>Discord msg IDs:</span>
+      <code>1513874334765154305, 1513874345179746406</code>
+    </div>
+  </footer>
+</article>
+</main>
+<footer class="footer">
+  <div class="container">
+    <p>STEM News · auto-publikowane z wątku Discord 1512398228384120864 · GitHub Actions daily</p>
+    <p class="muted">Rozszerzane przez <code>gpt-5.5-pro20x</code> (vsllm) · Vanilla HTML+CSS · GitHub Pages</p>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

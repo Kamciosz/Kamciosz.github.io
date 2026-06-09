@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mac M-series + llama.cpp — 70B LLM w 32GB RAM — STEM News</title>
+<meta name="description" content="STEM News — codzienny przegląd AI, security, hardware i open source.">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link rel="alternate" type="application/rss+xml" title="STEM News RSS" href="/rss.xml">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+<body>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a href="/" class="logo"><span class="logo-bracket">[</span>stem<span class="logo-bracket">]</span></a>
+    <nav class="nav">
+      <a href="/?filter=all">Wszystkie</a>
+      <a href="/?filter=ai">AI/ML</a>
+      <a href="/?filter=security">Security</a>
+      <a href="/?filter=hardware">Hardware</a>
+      <a href="/?filter=opensource">Open source</a>
+      <a href="/rss.xml">RSS</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">◐</button>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <header class="article-header">
+    <div class="article-meta">
+      <span>2026-06-09</span>
+      <span>·</span>
+      <span>6 min czytania</span>
+      <span>·</span>
+      <span>4 źródeł</span>
+    </div>
+    <h1>Mac M-series + llama.cpp — 70B LLM w 32GB RAM</h1>
+  </header>
+  <div class="article-body">
+<h3>Co się stało</h3>
+
+<p>Apple Silicon w połączeniu z llama.cpp i akceleracją Metal stał się praktyczną platformą do lokalnego uruchamiania dużych modeli językowych, w tym modeli klasy 70B, bez chmury i bez dedykowanego GPU. Kluczową rolę odgrywa unif memory: wspólna pula RAM dla CPU i GPU, która pozwala ominąć klasyczne ograniczenie VRAM znane z PC.</p>
+
+<p>W praktyce oznacza to, że Mac Mini M4 za $999 z 24GB RAM obsługuje modele 7B-13B, a konfiguracje 48-64GB RAM zaczynają być realnym progiem dla Llama 3.3 70B w kwantyzacji Q4_K_M lub Q5_K_M. W lutym 2026 deweloper z USA uruchomił Llama 3.3 70B na MacBooku Pro M4 z 64GB RAM podczas 11-godzinnego lotu nad Atlantykiem, osiągając 71 tokenów/s bez sieci, bez API i bez chmury.</p>
+
+<h3>Kontekst</h3>
+
+<p>Przez ostatnie 18 miesięcy lokalne AI na Macach przestało być niszą dla eksperymentów, a zaczęło być realnym workflow dla developerów. Główna zmiana nie wynika wyłącznie z mocy obliczeniowej GPU w układach M-series, ale z architektury pamięci. W klasycznym PC model musi mieścić się w VRAM karty graficznej albo wymaga offloadingu, czyli przenoszenia części obliczeń i danych między GPU, RAM-em systemowym oraz dyskiem. To często zabija wydajność, nawet jeśli sama karta ma wysoką przepustowość.</p>
+
+<p>Na Macach M-series CPU i GPU korzystają z tej samej puli RAM. Dzięki temu model nie musi być kopiowany między pamięcią systemową a VRAM, bo nie ma osobnej puli VRAM w takim sensie jak na PC. Dla modeli LLM jest to szczególnie istotne, ponieważ rozmiar wag i cache kontekstu szybko przekracza 24GB. RTX 4090 ma 24GB VRAM i 1008 GB/s bandwidth, ale Llama 3.1 70B w sensownej kwantyzacji nie mieści się tam bez kompromisów. Na Macu M3 Max z 96GB RAM ten sam model w Q4_K_M może wejść do pamięci bez agresywnej kwantyzacji i bez ładowania warstwa po warstwie z dysku.</p>
+
+<p>Nie oznacza to jednak, że sama pojemność RAM rozwiązuje problem. Wąskim gardłem pozostaje bandwidth. Mac Studio M3 Ultra z 192GB RAM osiąga 25-30 tok/s na Llama 3.1 70B głównie dzięki 819 GB/s bandwidth LPDDR5X. M4 Max z 64GB ma 546 GB/s i przy pełnym 70B daje 8-9 tok/s, choć z kwantyzacją w konkretnym scenariuszu osiągnięto 71 tok/s. Z kolei DGX Spark, mimo pozycjonowania jako „personal AI supercomputer”, przy 273 GB/s osiąga zaledwie 2.7 tok/s.</p>
+
+<h3>Kluczowe liczby</h3>
+
+<ul>
+<li>Mac Mini M4 za $999 z 24GB RAM obsługuje lokalnie modele 7B-13B, które na PC wymagałyby dedykowanego GPU za $400+.</li>
+<li>W lutym 2026 Llama 3.3 70B działała na MacBooku Pro M4 z 64GB RAM przez 11 godzin lotu nad Atlantykiem, bez sieci i chmury, z wynikiem 71 tokenów/s.</li>
+<li>Mac Studio M3 Ultra z 192GB RAM i 819 GB/s bandwidth LPDDR5X osiąga 25-30 tok/s na Llama 3.1 70B.</li>
+<li>M4 Max z 64GB RAM ma 546 GB/s bandwidth i osiąga 8-9 tok/s na pełnym 70B oraz 71 tok/s z kwantyzacją.</li>
+<li>RTX 4090 ma 24GB VRAM i 1008 GB/s bandwidth, ale dla Llama 3.1 70B wymaga Q2_K albo offloadingu.</li>
+<li>DGX Spark ma 273 GB/s bandwidth i osiąga 2.7 tok/s mimo marketingu „personal AI supercomputer”.</li>
+<li>Praktyczne progi RAM na 2026: 16GB dla 7B Q4_K, 24GB dla 13B Q5_K lub 34B Q2_K, 48GB dla 70B Q4_K_M, 64GB dla 70B Q5_K_M.</li>
+<li>Llama 3.3 70B Instruct Q4_K_M zajmuje około 40GB, Q5_K_M około 48GB, a Qwen 2.5 32B Q4_K_M około 20GB.</li>
+</ul>
+<h3>Dlaczego to ważne</h3>
+
+<p>Najważniejsza konsekwencja dotyczy niezależności od chmury. Lokalny model 70B na Macu nie wymaga API key, nie generuje kosztów per request i nie wysyła danych do zewnętrznego providera. Dla pracy z kodem, dokumentacją, prywatnymi repozytoriami albo materiałem objętym ograniczeniami compliance jest to istotna różnica. Zamiast traktować lokalne LLM jako zabawkę, można zbudować powtarzalny setup z llama.cpp, OpenAI-compatible API i narzędziami typu Aider, Continue.dev lub Hermes Agent.</p>
+
+<p>Druga konsekwencja to zmiana kryteriów wyboru sprzętu. W świecie lokalnych LLM sama liczba TOPS albo marketingowa etykieta „AI computer” ma mniejsze znaczenie niż realna kombinacja RAM, bandwidth i wsparcia runtime’u. MacBook Air M3 z 16GB RAM jest sensowny dla modeli do 7B w Q4_K z kontekstem 4K tokenów. Mac Mini M4 z 24GB RAM pozwala wejść w 13B Q5_K, 34B Q2_K i kontekst 8K. MacBook Pro M3 Pro z 36GB RAM komfortowo obsłuży 34B Q4_K_M, a 70B jedynie w Q2_K z offloadingiem. Dopiero 48GB RAM otwiera realny próg dla 70B Q4_K_M z kontekstem 16K.</p>
+
+<p>Trzecia konsekwencja dotyczy jakości modeli i kwantyzacji. Llama 3.3 70B Q2_K zajmuje około 28GB, ale tak agresywna kwantyzacja powoduje, że jakościowo model może odpowiadać dobrze wytrenowanemu 13B. Dla poważnej pracy lepszym wyborem może być Qwen 2.5 32B Q4_K_M, który zajmuje około 20GB i według podanych benchmarków MMLU wyprzedza Llama 3.1 70B Q4. Do kodowania alternatywą jest DeepSeek Coder V2 16B Q5_K_M, około 12GB, wskazany jako model przewyższający GPT-4 z marca 2024 w HumanEval. Dla bardziej ogólnych zastosowań Mistral Small 24B Q4_K_M zajmuje około 15GB i oferuje kontekst 128K oraz przyzwoitą obsługę języka polskiego.</p>
+
+<h3>Praktyczne rekomendacje</h3>
+
+<p>Najprostsza ścieżka startu na macOS to instalacja llama.cpp przez Homebrew. Wystarczy `brew install llama.cpp`, a następnie `llama-cli --version`, aby sprawdzić wersję, np. `llama-cli build 5230 (v3.2.0)`. Homebrew automatycznie buduje llama.cpp z akceleracją Metal na Apple Silicon i dostarcza `llama-cli`, `llama-server` oraz `llama-bench`. To najlepsza opcja, jeśli celem jest szybkie uruchomienie modelu, a nie testowanie najnowszych zmian upstream. Ograniczeniem jest stabilna wersja formuły: jeżeli potrzebne są najnowsze optymalizacje, np. MLA support dla DeepSeek-V3 albo architektury Qwen 3.5, lepiej kompilować ze źródeł.</p>
+
+<p>Alternatywą są gotowe binaria z GitHub releases. Dla Apple Silicon należy wybrać wariant `macos-arm64`, a dla Intel `macos-x64`, przy czym wersja Intel będzie znacznie wolniejsza. Komendy są proste: `curl -L <a href="https://github.com/ggerganov/llama.cpp/releases/latest/download/llama-binaries-macos-arm64.zip" target="_blank" rel="noopener noreferrer">https://github.com/ggerganov/llama.cpp/releases/latest/downl...</a> -o llama.zip`, następnie `unzip llama.zip`, `cd build/bin` i `./llama-cli --version`. Pliki są podpisane przez GitHub Actions, więc można je uruchomić bez gatekeeper warningów. Dla maksymalnej kontroli i wydajności zostaje kompilacja ze źródeł: `git clone <a href="https://github.com/ggerganov/llama.cpp`," target="_blank" rel="noopener noreferrer">https://github.com/ggerganov/llama.cpp`,</a> potem `cmake -B build -DGGML_METAL=ON -DGGML_METAL_EMBED_LIBRARY=ON -DCMAKE_BUILD_TYPE=Release` oraz `cmake --build build --config Release -- -j$(sysctl -n hw.ncpu)`.</p>
+
+<p>Dobór modelu powinien wynikać z konkretnego RAM-u. Na Mac Mini M4 lub MBP M3 Pro z 24-36GB RAM najbardziej praktyczny zakres to 13B-34B. Qwen 2.5 32B Q4_K_M około 20GB jest wskazany jako najlepsza wartość w tej półce, a DeepSeek Coder V2 16B Q5_K_M około 12GB jako wybór pod kodowanie. Na MBP M3 Max lub M4 Pro z 48-64GB RAM zaczyna się sensowna praca z 70B: Llama 3.3 70B Instruct Q4_K_M około 40GB daje 8-9 tok/s na M4 Max 64GB i 15-18 tok/s na M3 Max 64GB, a Q5_K_M około 48GB jest sweet spotem jakości względem rozmiaru, z prędkością 6-7 tok/s na M4 Max. Mistral Large 2 123B Q3_K_S około 52GB formalnie mieści się w 64GB, ale zostawia tylko 1-2 GB wolnego RAM-u, więc kontekst trzeba trzymać do 4K.</p>
+
+<p>Najbardziej użyteczny workflow to lokalny serwer zgodny z OpenAI API. Przykładowy start: `./llama-server -m ~/models/llama-3.3-70b-instruct-q4_k_m.gguf --port 8080 -c 16384 --cache-type-k q8_0 --cache-type-v q8_0 -ngl 99`. Następnie Aider można podłączyć przez `aider --model openai://llama-3.3-70b --openai-api-base <a href="http://localhost:8080/v1" target="_blank" rel="noopener noreferrer">http://localhost:8080/v1</a> --api-key none`. Taki setup daje lokalnego coding agenta bez chmury, bez kosztów per request i bez rate limitów. Według opisu Aider na modelu 70B z kontekstem 16K daje coding experience porównywalny z Claude Sonnet 4 z 2025, przy założeniu, że cały ruch zostaje lokalnie.</p>
+
+<p>Analogicznie można podłączyć Hermes Agent do lokalnego LLM jako głównego providera zamiast płatnych API OpenAI lub Anthropic. Konfiguracja w `~/.hermes/config.yaml` definiuje provider `local-llama`, `base_url: <a href="http://127.0.0.1:8080/v1`," target="_blank" rel="noopener noreferrer">http://127.0.0.1:8080/v1`,</a> `default_model: llama-3.3-70b`, `key_env: LLAMA_LOCAL_KEY`, `transport: chat_completions` oraz model z `context_length: 16384`. W environment file ustawiane jest `LLAMA_LOCAL_KEY=***`. W praktyce najważniejsze jest pilnowanie trzech rzeczy: model musi mieścić się w RAM razem z KV cache, kontekst trzeba dobrać do dostępnej pamięci, a throughput będzie zależał bardziej od bandwidth niż od samej pojemności RAM.</p>
+<div class="sources"><h3>Źródła</h3><ul><li><a href="http://127.0.0.1:8080/v1" target="_blank" rel="noopener noreferrer">127.0.0.1:8080/v1</a></li><li><a href="https://github.com/ggerganov/llama.cpp" target="_blank" rel="noopener noreferrer">github.com/ggerganov/llama.cpp</a></li><li><a href="http://localhost:8080/v1" target="_blank" rel="noopener noreferrer">localhost:8080/v1</a></li><li><a href="https://github.com/ggerganov/llama.cpp/releases/latest/download/llama-binaries-macos-arm64.zip" target="_blank" rel="noopener noreferrer">github.com/ggerganov/llama.cpp/releases/latest/download/llam</a></li></ul></div>
+  </div>
+  <footer class="article-footer">
+    <a href="/" class="back-link">← Wszystkie newsy</a>
+    <div class="discord-refs">
+      <span>Discord msg IDs:</span>
+      <code>1513894732227543041, 1513894740024623275, 1513894750887870567, 1513894761998848171</code>
+    </div>
+  </footer>
+</article>
+</main>
+<footer class="footer">
+  <div class="container">
+    <p>STEM News · auto-publikowane z wątku Discord 1512398228384120864 · GitHub Actions daily</p>
+    <p class="muted">Rozszerzane przez <code>gpt-5.5-pro20x</code> (vsllm) · Vanilla HTML+CSS · GitHub Pages</p>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Claude Mythos Preview — STEM News</title>
+<meta name="description" content="STEM News — codzienny przegląd AI, security, hardware i open source.">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link rel="alternate" type="application/rss+xml" title="STEM News RSS" href="/rss.xml">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+<body>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a href="/" class="logo"><span class="logo-bracket">[</span>stem<span class="logo-bracket">]</span></a>
+    <nav class="nav">
+      <a href="/?filter=all">Wszystkie</a>
+      <a href="/?filter=ai">AI/ML</a>
+      <a href="/?filter=security">Security</a>
+      <a href="/?filter=hardware">Hardware</a>
+      <a href="/?filter=opensource">Open source</a>
+      <a href="/rss.xml">RSS</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">◐</button>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <header class="article-header">
+    <div class="article-meta">
+      <span>2026-06-09</span>
+      <span>·</span>
+      <span>2 min czytania</span>
+      <span>·</span>
+      <span>4 źródeł</span>
+    </div>
+    <h1>Claude Mythos Preview</h1>
+  </header>
+  <div class="article-body">
+<h3>Co się stało</h3>
+
+<p>Anthropic 7 kwietnia 2026 pokazał Claude Mythos Preview, model ogólnego przeznaczenia, który w 8 tygodni przejął prowadzenie w SWE-bench Verif z wynikiem 93.9%. To skok o 13.9 punktu procentowego względem wcześniejszych modeli Claude z końca 2025 roku i wyraźne wyprzedzenie GPT-5.4 oraz Gemini 3.1 Pro, które notują okolice 80%.</p>
+
+<h3>Kontekst</h3>
+
+<p>SWE-bench Verif mierzy rozwiązywanie realnych issue’ów z GitHub w agentic scaffold, na zestawie 500 zadań. Wynik 93.9% oznacza, że model jest blisko poziomu, przy którym samodzielna obsługa typowych ticketów programistycznych, takich jak „fix this failing test”, przestaje być wyłącznie demonstracją technologiczną.</p>
+
+<p>Dotychczasowym liderem był Claude Opus 4.8 z wynikiem 88.6%, a wcześniejsze modele Claude z końca 2025 roku były o 13.9 punktu procentowego niżej. Jednocześnie Anthropic podkreśla, że Mythos nie jest wyspecjalizowanym modelem bezpieczeństwa ani cyfrowo-ograniczonym agentem red-team. To model ogólnego przeznaczenia, w którym „offensive security staje się emergentną właściwością architektury, a nie zaprojektowaną cechą”. Innymi słowy: lepszy reasoning i lepsze kodowanie przekładają się także na większą zdolność znajdowania zero-dayów, nawet bez security fine-tuningu.</p>
+
+<p>Publiczny dostęp został jednak mocno ograniczony. Anthropic nie udostępnił API ani wag, a dostęp trafił tylko do wąskiego grona partnerów. To odwrócenie polityki z 2025 roku, ky OpenAI wypuszczał GPT-OSS 120B/20B jako open-weight, podczas gdy Anthropic trzymał swoje modele za paywallem.</p>
+
+<h3>Kluczowe liczby</h3>
+
+<ul>
+<li>7 kwietnia 2026: data pokazania Claude Mythos Preview przez Anthropic.</li>
+<li>8 tygodni: czas, w którym model przejął prowadzenie w SWE-bench Verif.</li>
+<li>93.9%: wynik Claude Mythos Preview w SWE-bench Verif, na 500 realnych zadaniach z GitHub.</li>
+<li>13.9 punktu procentowego: skok względem wcześniejszych modeli Claude z końca 2025 roku.</li>
+<li>88.6%: wynik dotychczasowego lidera, Claude Opus 4.8.</li>
+<li>94.6% GPQA Diamond, 82% Terminal-Bench 2.0, 97.6% USAMO oraz ~64% Humanity's Last Exam: pozostałe benchmarki opublikowane przez Anthropic i niezależnie zweryfikowane przez Tensoria.</li>
+</ul>
+<h3>Dlaczego to ważne</h3>
+
+<p>Dla zespołów engineering najważniejszy jest próg praktycznej użyteczności. Skok z okolic 80% do 93.9% na SWE-bench Verif oznacza, że model rozwiązuje samodzielnie około 14 na 15 realnych bug-reportów z repozytoriów open source. W raportach branżowych opisano tryb „one-shot fix”: Mythos iteruje po plikach, pisze patch, uruchamia testy i naprawia własny błąd. Taki sposób działania może znacząco obniżyć koszt obsługi legacy codebase’ów.</p>
+
+<p>Dla bezpieczeństwa konsekwencje są dwuznaczne. Ten sam reasoning, który pozwala rozwiązywać zadania programistyczne, sprawdza się też w CTF-ach i exploit-chainach. Anthropic ostrzega, że Mythos znajdował zero-daye overnight w testach red-team. To wzmacnia argument za szybszym wdrożeniem AI-assisted defense po stronie blue team, ale równocześnie wyjaśnia ostrożność w dostępie.</p>
+
+<p>Dla rynku wynik Mythos to sygnał, że Anthropic wraca na pozycję technicznego lidera po Q1 2026, gdy DeepSeek i Muse Spark podgryzały udziały. Przewaga 13+ punktów nad GPT-5.4 i Gemini 3.1 Pro zmienia układ sił w segmencie agentów kodujących. Brak API i brak wag sugerują natomiast przygotowanie wersji komercyjnej z kontrolami, prawdopodobnie Mythos 1.0 za paywallem, gdy regulatorzy, w tym EU AI Act i US executive order z czerwca 2026, uregulują emergent cyber capabilities.</p>
+<div class="sources"><h3>Źródła</h3><ul><li><a href="https://www.mindstudio.ai/blog/claude-mythos-benchmark-results-swe-bench-agentic-coding" target="_blank" rel="noopener noreferrer">www.mindstudio.ai/blog/claude-mythos-benchmark-results-swe-b</a></li><li><a href="https://pub.towardsai.net/claude-mythos-preview-93-9-swe-bench-finds-zero-days-overnight-heres-why-you-can-t-use-it-adfa4de4414c" target="_blank" rel="noopener noreferrer">pub.towardsai.net/claude-mythos-preview-93-9-swe-bench-finds</a></li><li><a href="https://benchlm.ai/benchmarks/sweVerified" target="_blank" rel="noopener noreferrer">benchlm.ai/benchmarks/sweVerified</a></li><li><a href="https://tensoria.fr/en/blog/claude-mythos-preview" target="_blank" rel="noopener noreferrer">tensoria.fr/en/blog/claude-mythos-preview</a></li></ul></div>
+  </div>
+  <footer class="article-footer">
+    <a href="/" class="back-link">← Wszystkie newsy</a>
+    <div class="discord-refs">
+      <span>Discord msg IDs:</span>
+      <code>1513874270441312350, 1513874280843313303</code>
+    </div>
+  </footer>
+</article>
+</main>
+<footer class="footer">
+  <div class="container">
+    <p>STEM News · auto-publikowane z wątku Discord 1512398228384120864 · GitHub Actions daily</p>
+    <p class="muted">Rozszerzane przez <code>gpt-5.5-pro20x</code> (vsllm) · Vanilla HTML+CSS · GitHub Pages</p>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>STEM News</title>
+    <link>https://stem-news.example/</link>
+    <description>Codzienny przegląd AI, security, hardware i open source.</description>
+    <language>pl</language>
+    <item>
+      <title>Mac M-series + llama.cpp — 70B LLM w 32GB RAM</title>
+      <link>https://stem-news.example/news/mac-m-series-llama-cpp-70b-llm-w-32gb-ram.html</link>
+      <guid>https://stem-news.example/news/mac-m-series-llama-cpp-70b-llm-w-32gb-ram.html</guid>
+      <pubDate>2026-06-09T13:17:18.065000+00:00</pubDate>
+      <description>
+
+Apple Silicon w połączeniu z llama.cpp i akceleracją Metal stał się praktyczną platformą do lokalnego uruchamiania dużych modeli językowych, w tym modeli klasy 70B, bez chmury i bez dedykowanego GPU. Kluczową rolę odgrywa unif memory: wspólna pula RAM dla CPU i GPU, która pozwala ominąć klasyczne ograniczenie VRAM znane z PC.
+
+W praktyce oznacza to, że Mac Mini M4 za $999 z 24GB RAM obsługuje modele 7B-13B, a konfiguracje 48-64GB RAM zaczynają być realnym progiem dla Llama 3.3 </description>
+    </item>
+    <item>
+      <title>WWDC 2026 keynote (8 czerwca, Apple Park Cupertino)</title>
+      <link>https://stem-news.example/news/wwdc-2026-keynote-8-czerwca-apple-park-cupertino.html</link>
+      <guid>https://stem-news.example/news/wwdc-2026-keynote-8-czerwca-apple-park-cupertino.html</guid>
+      <pubDate>2026-06-09T11:32:20.838000+00:00</pubDate>
+      <description>
+
+Podczas WWDC 2026 keynote, które odbyło się 8 czerwca w Apple Park w Cupertino, Apple zaprezentował 6 głównych bloków ogłoszeń obejmujących Siri AI, Apple Intelligence 2.0, nowe systemy operacyjne oraz narzędzia dla deweloperów. Wystąpienie trwało 1h 16min i zostało pokazane w oficjalnym streamie Apple na YouTube, na kanale z 20.7M subów.
+
+Tim Cook otworzył keynote hasłem „the beginning of a new era of personal computing”, ustawiając całe wydarzenie jako największe WWDC od 2022</description>
+    </item>
+    <item>
+      <title>Apple zapowiedziało gruntowną przebudowę Siri AI: według Craiga Federighiego, SVP Software Engineering, asystent został „rebuilt from the ground up with AI at its core”.</title>
+      <link>https://stem-news.example/news/apple-zapowiedzialo-gruntowna-przebudowe-siri-ai-wedlug-craiga-federighiego-svp-.html</link>
+      <guid>https://stem-news.example/news/apple-zapowiedzialo-gruntowna-przebudowe-siri-ai-wedlug-craiga-federighiego-svp-.html</guid>
+      <pubDate>2026-06-09T11:32:24.227000+00:00</pubDate>
+      <description>
+
+Apple zapowiedziało gruntowną przebudowę Siri AI: według Craiga Federighiego, SVP Software Engineering, asystent został „rebuilt from the ground up with AI at its core”. Nowa Siri ma być bardziej konwersacyjna i naturalna, a jednocześnie zyskać dostęp do aplikacji oraz danych na iPhonie przy zachowaniu „strong privacy controls”. Ważną zmianą jest też podejście multi-vendor AI: obok ChatGPT pojawi się  jako alternatywny dostawca AI wybierany przez użytkownika</description>
+    </item>
+    <item>
+      <title>Apple Intelligence 2.0 w apps</title>
+      <link>https://stem-news.example/news/apple-intelligence-2-0-w-apps.html</link>
+      <guid>https://stem-news.example/news/apple-intelligence-2-0-w-apps.html</guid>
+      <pubDate>2026-06-09T11:32:27.550000+00:00</pubDate>
+      <description>
+
+Apple Intelligence 2.0 ma przynieść wyraźne rozszerzenie funkcji AI w aplikacjach systemowych Apple, nie ograniczając się wyłącznie do Siri. Nowa warstwa AI ma działać pod wszystkimi appami i obejmować m.in. Safari, Photos, Shortcuts, Health, Messages, Image Playground oraz Notes. Kluczową zmianą ma być cross-app context awareness, czyli świadomość kontekstu między aplikacjami.
+
+
+
+W latach 2024-2025 funkcje AI w aplikacjach były opisywane jako bardziej izolowane: ko</description>
+    </item>
+    <item>
+      <title>iOS 27 Liquid Glass + developer APIs + implikacje rynkowe</title>
+      <link>https://stem-news.example/news/ios-27-liquid-glass-developer-apis-implikacje-rynkowe.html</link>
+      <guid>https://stem-news.example/news/ios-27-liquid-glass-developer-apis-implikacje-rynkowe.html</guid>
+      <pubDate>2026-06-09T11:32:31.117000+00:00</pubDate>
+      <description>
+
+Apple udostępniło iOS 27 Beta dla developerów 8 czerwca 2026 roku, w buildzie 23A5297i. Największe zmiany obejmują nowy język projektowania Liquid Glass, framework Foundation Models do lokalnego inference AI, rozszerzone Adaptive Voice Shortcuts oraz testy AI-assisted app review w TestFlight i App Store.
+
+
+
+iOS 27 wygląda na jedną z ważniejszych aktualizacji systemu Apple z perspektywy interfejsu, AI i rynku aplikacji. Liquid Glass zmienia wygląd wszystkich stock ap</description>
+    </item>
+    <item>
+      <title>Claude Mythos Preview</title>
+      <link>https://stem-news.example/news/claude-mythos-preview.html</link>
+      <guid>https://stem-news.example/news/claude-mythos-preview.html</guid>
+      <pubDate>2026-06-09T11:55:54.977000+00:00</pubDate>
+      <description>
+
+Anthropic 7 kwietnia 2026 pokazał Claude Mythos Preview, model ogólnego przeznaczenia, który w 8 tygodni przejął prowadzenie w SWE-bench Verif z wynikiem 93.9%. To skok o 13.9 punktu procentowego względem wcześniejszych modeli Claude z końca 2025 roku i wyraźne wyprzedzenie GPT-5.4 oraz Gemini 3.1 Pro, które notują okolice 80%.
+
+
+
+SWE-bench Verif mierzy rozwiązywanie realnych issue’ów z GitHub w agentic scaffold, na zestawie 500 zadań. Wynik 93.9% oznacza, że model </description>
+    </item>
+    <item>
+      <title>Google I/O 17 maja 2026 przyniosło największy w historii firmy pakiet ogłoszeń dotyczących agentów AI i multimodalności.</title>
+      <link>https://stem-news.example/news/google-i-o-17-maja-2026-przynioslo-najwiekszy-w-historii-firmy-pakiet-ogloszen-d.html</link>
+      <guid>https://stem-news.example/news/google-i-o-17-maja-2026-przynioslo-najwiekszy-w-historii-firmy-pakiet-ogloszen-d.html</guid>
+      <pubDate>2026-06-09T11:55:59.794000+00:00</pubDate>
+      <description>
+
+Google I/O 17 maja 2026 przyniosło największy w historii firmy pakiet ogłoszeń dotyczących agentów AI i multimodalności. Google pokazał cztery kluczowe elementy: Gemini 3.5 Flash, Gemini Spark, Gemini Omni (Flash) oraz Antigravity 2.0, czyli platformę agent-first dla programistów. Szczególnie Antigravity 2.0 ma być wejściem Google’a na rynek agentic coding, gdzie do tej pory najmocniej widoczne były Anthropic Claude Code i OpenAI Codex.
+
+
+
+Google buduje ten zestaw o</description>
+    </item>
+    <item>
+      <title>OpenAI w sierpniu 2025 wypuścił GPT-OSS: pierwszy open-weight model firmy od czasu GPT-2 z 2019 roku.</title>
+      <link>https://stem-news.example/news/openai-w-sierpniu-2025-wypuscil-gpt-oss-pierwszy-open-weight-model-firmy-od-czas.html</link>
+      <guid>https://stem-news.example/news/openai-w-sierpniu-2025-wypuscil-gpt-oss-pierwszy-open-weight-model-firmy-od-czas.html</guid>
+      <pubDate>2026-06-09T11:56:05.509000+00:00</pubDate>
+      <description>
+
+OpenAI w sierpniu 2025 wypuścił GPT-OSS: pierwszy open-weight model firmy od czasu GPT-2 z 2019 roku. To ważny zwrot po 6 latach, w których OpenAI nie udostępniało otwartego modelu, mimo że to właśnie firma współdefiniowała obecną erę LLM.
+
+Nowa linia obejmuje dwa warianty:  oraz . Oba mają context window , ale są kierowane do różnych zastosowań: od enterprise inference po lokalne i on-device agents.
+
+
+
+GPT-OSS jest pozycjonowa</description>
+    </item>
+    <item>
+      <title>AMD MI400 + Helios rack</title>
+      <link>https://stem-news.example/news/amd-mi400-helios-rack.html</link>
+      <guid>https://stem-news.example/news/amd-mi400-helios-rack.html</guid>
+      <pubDate>2026-06-09T11:56:10.316000+00:00</pubDate>
+      <description>
+
+AMD potwierdziło specyfikacje akceleratorów MI400 oraz platformy Helios, czyli pierwszego rack-scale systemu AMD przeznaczonego do AI training i inference. Cel wdrożenia to 2H 2026, a firma pozycjonuje Helios jako bezpośrednią alternatywę dla NVIDIA NVL72 i Google TPU pods, opartą na otwartych standardach OCP.
+
+
+
+MI400 i Helios to najpoważniejsza próba AMD wejścia w segment infrastruktury AI na poziomie całych racków, a nie tylko pojedynczych GPU. NVIDIA zbudowała s</description>
+    </item>
+    <item>
+      <title>4 czerwca 2026 opublikowano [用户触发屏蔽词]26-45609, krytyczną podatność typu SSRF (CWE-918) w frameworku mcp-security dla Spring AI.</title>
+      <link>https://stem-news.example/news/4-czerwca-2026-opublikowano-26-45609-krytyczna-podatnosc-typu-ssrf-cwe-918-w-fra.html</link>
+      <guid>https://stem-news.example/news/4-czerwca-2026-opublikowano-26-45609-krytyczna-podatnosc-typu-ssrf-cwe-918-w-fra.html</guid>
+      <pubDate>2026-06-09T11:56:15.540000+00:00</pubDate>
+      <description>
+
+4 czerwca 2026 opublikowano 26-45609, krytyczną podatność typu SSRF (CWE-918) w frameworku mcp-security dla Spring AI. Problem dotyczy ścieżki OAuth Dynamic Client Registration (DCR), która podczas pobierania metadata URL wykonuje żądanie HTTP do adresu kontrolowanego przez atakującego bez wymaganej walidacji SSRF. Tego samego dnia wydano poprawkę w mcp-security 0.1.9.
+
+
+
+Podatne są wersje mcp-security &lt; 0.1.9, które nie egzekwują mandatory SSRF mitigations wymagany</description>
+    </item>
+  </channel>
+</rss>

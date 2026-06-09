@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+.vscode/
+*.swp
+
+# Build artifacts
+/build/
+/dist/
+/node_modules/
+
+# Local data (raw Discord - has user token reference)
+data/raw/
+data/archive/
+
+# But keep data/news.json (committed, drives site)
+!data/news.json

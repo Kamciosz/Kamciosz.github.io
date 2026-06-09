@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OpenAI w sierpniu 2025 wypuścił GPT-OSS: pierwszy open-weight model firmy od czasu GPT-2 z 2019 roku. — STEM News</title>
+<meta name="description" content="STEM News — codzienny przegląd AI, security, hardware i open source.">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link rel="alternate" type="application/rss+xml" title="STEM News RSS" href="/rss.xml">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+<body>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a href="/" class="logo"><span class="logo-bracket">[</span>stem<span class="logo-bracket">]</span></a>
+    <nav class="nav">
+      <a href="/?filter=all">Wszystkie</a>
+      <a href="/?filter=ai">AI/ML</a>
+      <a href="/?filter=security">Security</a>
+      <a href="/?filter=hardware">Hardware</a>
+      <a href="/?filter=opensource">Open source</a>
+      <a href="/rss.xml">RSS</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">◐</button>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <header class="article-header">
+    <div class="article-meta">
+      <span>2026-06-09</span>
+      <span>·</span>
+      <span>3 min czytania</span>
+      <span>·</span>
+      <span>5 źródeł</span>
+    </div>
+    <h1>OpenAI w sierpniu 2025 wypuścił GPT-OSS: pierwszy open-weight model firmy od czasu GPT-2 z 2019 roku.</h1>
+  </header>
+  <div class="article-body">
+<h3>Co się stało</h3>
+
+<p>OpenAI w sierpniu 2025 wypuścił GPT-OSS: pierwszy open-weight model firmy od czasu GPT-2 z 2019 roku. To ważny zwrot po 6 latach, w których OpenAI nie udostępniało otwartego modelu, mimo że to właśnie firma współdefiniowała obecną erę LLM.</p>
+
+<p>Nowa linia obejmuje dwa warianty: <strong>gpt-oss-120B</strong> oraz <strong>gpt-oss-20B</strong>. Oba mają context window <strong>131K</strong>, ale są kierowane do różnych zastosowań: od enterprise inference po lokalne i on-device agents.</p>
+
+<h3>Kontekst</h3>
+
+<p>GPT-OSS jest pozycjonowany jako model open-weight, dostępny m.in. przez Hugging Face na licencji <strong>Apache 2.0</strong>, a także przez partnerów oferujących hosting i wdrożenia zarządzane. W praktyce oznacza to, że OpenAI wraca do otwartego ekosystemu, ale robi to selektywnie: GPT-OSS 120B nie jest pełnym modelem z ich research stacku i według opisu nie ma RLHF na poziomie o3. Strategia wygląda więc na próbę dostarczenia deweloperom modelu „wystarczająco dobrego”, bez bezpośredniego osłabiania pozycji modeli frontier, takich jak GPT-5.</p>
+
+<p>Architektura to decoder-only transformer z mixture-of-experts. W przypadku 120B aktywne jest około <strong>5B parametrów na forward pass</strong>, co ma znaczenie dla kosztów i wydajności inference. Model trenowano na common crawl, web, code i math, a następnie poddano post-trainingowi pod reasoning, tool use oraz agentic behavior. W benchmarkach 120B wypada blisko o3-mini w zadaniach reasoningowych.</p>
+
+<p>Istotnym elementem jest też partnerstwo z <strong>AMD</strong>. GPT-OSS został zoptymalizowany pod <strong>ROCm</strong> oraz układy <strong>MI300X/MI355</strong>, co sygnalizuje, że OpenAI traktuje AMD jako realną alternatywę dla NVIDIA w inference, choć niekoniecznie w trainingu.</p>
+
+<h3>Kluczowe liczby</h3>
+
+<ul>
+<li><strong>gpt-oss-120B</strong>: <strong>120 miliardów parametrów</strong>, <strong>131K context window</strong>, cena przez API <strong>$0.039/M input</strong> i <strong>$0.100/M output</strong>.</li>
+<li><strong>gpt-oss-20B</strong>: <strong>20 miliardów parametrów</strong>, <strong>131K context</strong>, mieści się na <strong>16GB VRAM</strong>, czyli także na laptop GPU.</li>
+<li>Inference dla gpt-oss-120B wymaga pojedynczego <strong>GPU H100 80GB</strong> przy użyciu <strong>MXFP4 quantization</strong>.</li>
+<li>Ceny per <strong>1M tokenów</strong>: gpt-oss-120B <strong>$0.039 / $0.10</strong>, Claude Sonnet 4.6 <strong>$3 / $15</strong>, Claude Opus 4.6 <strong>$5 / $25</strong>, GPT-5.2 <strong>$1.5 / $14</strong>.</li>
+<li>Fireworks AI oferuje managed API dla GPT-OSS w cenie <strong>$0.15/$0.6 per 1M tokenów</strong>.</li>
+<li>Context window <strong>131K</strong> wystarcza według opisu na całą bazę kodu średniego projektu, książkę <strong>200 stron</strong>, pełny PR diff w code review albo około <strong>1h transkrypcji audio</strong>.</li>
+</ul>
+<h3>Dlaczego to ważne</h3>
+
+<p>Największa zmiana dotyczy kosztów inference. Cena <strong>$0.039/M input</strong> dla 120B jest opisana jako <strong>50-100x tańsza</strong> niż Claude Opus 4.6 przy <strong>$5/M</strong> czy GPT-5.2 przy <strong>$1.5/M</strong>. Dla produktów z dużym ruchem, w których koszt tokenów jest głównym ograniczeniem, może to zmienić ekonomię wdrożeń.</p>
+
+<p>Drugą konsekwencją są lokalne agenty. Wariant <strong>20B</strong> działający na sprzęcie z <strong>16GB VRAM</strong> pozwala budować agentic aplikacje bez wysyłania danych do API. To szczególnie istotne w obszarach takich jak healthcare, legal i finanse, gdzie prywatność oraz regulacje ograniczają użycie modeli wyłącznie chmurowych.</p>
+
+<p>Trzecia implikacja dotyczy infrastruktury. Optymalizacja pod <strong>ROCm</strong> i <strong>MI300X/MI355</strong> sugeruje, że OpenAI przygotowuje się na rynek inference, w którym NVIDIA nie jest jedyną praktyczną opcją. To sygnał zarówno dla inwestorów, jak i operatorów data center.</p>
+
+<p>W ekosystemie open source GPT-OSS ma wypełniać lukę między Llama 3.x a DeepSeek V3, oferując jednocześnie lepszy tool use niż oba. Dla enterprise ważne jest też to, że obok Hugging Face pojawiają się partnerzy tacy jak <strong>AI Sweden</strong>, <strong>Orange</strong> i <strong>Snowflake</strong>, wskazani jako early partners dla on-premises.</p>
+<div class="sources"><h3>Źródła</h3><ul><li><a href="https://pricepertoken.com/pricing-page/model/openai-gpt-oss-120b" target="_blank" rel="noopener noreferrer">pricepertoken.com/pricing-page/model/openai-gpt-oss-120b</a></li><li><a href="https://openai.com/index/introducing-gpt-oss" target="_blank" rel="noopener noreferrer">openai.com/index/introducing-gpt-oss</a></li><li><a href="https://fireworks.ai/blog/openai-gpt-oss" target="_blank" rel="noopener noreferrer">fireworks.ai/blog/openai-gpt-oss</a></li><li><a href="https://www.byteplus.com/en/topic/577621" target="_blank" rel="noopener noreferrer">www.byteplus.com/en/topic/577621</a></li><li><a href="https://magazine.sebastianraschka.com/p/from-gpt-2-to-gpt-oss-analyzing-the" target="_blank" rel="noopener noreferrer">magazine.sebastianraschka.com/p/from-gpt-2-to-gpt-oss-analyz</a></li></ul></div>
+  </div>
+  <footer class="article-footer">
+    <a href="/" class="back-link">← Wszystkie newsy</a>
+    <div class="discord-refs">
+      <span>Discord msg IDs:</span>
+      <code>1513874313151778856, 1513874325017591818</code>
+    </div>
+  </footer>
+</article>
+</main>
+<footer class="footer">
+  <div class="container">
+    <p>STEM News · auto-publikowane z wątku Discord 1512398228384120864 · GitHub Actions daily</p>
+    <p class="muted">Rozszerzane przez <code>gpt-5.5-pro20x</code> (vsllm) · Vanilla HTML+CSS · GitHub Pages</p>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
