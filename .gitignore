@@ -23,3 +23,6 @@ data/archive/
 
 # But keep data/news.json (committed, drives site)
 !data/news.json
+logs/
+data/raw/
+data/archive/
