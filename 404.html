@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Redirecting...</title>
+<style>
+body { font-family: system-ui, sans-serif; text-align: center; padding: 4rem 1rem; color: #666; }
+a { color: #0066cc; }
+</style>
+</head>
+<body>
+<p>Przenoszę...</p>
+<p>Jeśli przeglądarka nie przekieruje automatycznie, <a id="manual" href="/">kliknij tutaj</a>.</p>
+<script>
+(function() {
+  var p = window.location.pathname;
+  // Stary subpath po rename repo: /stem-news-site/... → /...
+  if (p.indexOf('/stem-news-site/') === 0) {
+    var newPath = p.replace('/stem-news-site', '');
+    if (!newPath || newPath === '/') newPath = '/';
+    document.getElementById('manual').href = newPath;
+    window.location.replace(newPath);
+  } else {
+    // Nie-stem-news-site 404 → strona główna
+    window.location.replace('/');
+  }
+})();
+</script>
+</body>
+</html>
