@@ -3,6 +3,7 @@
 Wyjście: data/raw/<YYYY-MM-DD>.json
 """
 import json
+import os
 import re
 import ssl
 import sys
@@ -17,9 +18,15 @@ RAW_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def load_token() -> str:
-    token = TOKEN_PATH.read_text().strip()
+    # 1) Env var (GitHub Actions)
+    token = os.environ.get("DISCORD_USER_TOKEN", "").strip()
+    if token:
+        return token
+    # 2) Plik (lokalny)
+    if TOKEN_PATH.exists():
+        token = TOKEN_PATH.read_text().strip()
     if not token:
-        sys.exit(f"Token missing at {TOKEN_PATH}")
+        sys.exit(f"Token missing: set DISCORD_USER_TOKEN env var or create {TOKEN_PATH}")
     return token
 
 
