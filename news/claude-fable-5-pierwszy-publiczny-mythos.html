@@ -25,6 +25,11 @@
 .article-body h3 { margin-top: 1.5rem; }
 .article-body code { background: rgba(127,127,127,0.15); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.9em; }
 .article-body strong { color: #d97706; }
+.image-gallery { margin: 2.5rem 0; padding: 1rem 0; border-top: 2px solid rgba(127,127,127,0.2); border-bottom: 2px solid rgba(127,127,127,0.2); }
+.image-gallery h3 { margin-bottom: 1.5rem; font-size: 1.2rem; }
+.image-gallery figure { margin: 1.5rem 0; text-align: center; }
+.image-gallery img { width: 100%; max-width: 1100px; height: auto; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); background: white; padding: 8px; }
+.image-gallery figcaption { margin-top: 0.6rem; font-size: 0.92rem; color: rgba(127,127,127,0.9); font-style: italic; }
 </style>
 
 </head>
@@ -176,46 +181,16 @@
 <th>ETA</th>
 </tr></thead><tbody>
 <tr>
-<td><strong>VSLLM</strong></td>
-<td>✅ ¥60/¥300 (~$8.40/$42/M)</td>
-<td>Fable 5</td>
+<td><strong>VSLLM</strong> (vsllm.com)</td>
+<td>✅</td>
+<td>¥60/¥300 (~$8.40/$42/M)</td>
 <td>Dostępny (default group 2x = ¥120/¥600 real)</td>
 </tr>
 <tr>
 <td><strong>BuzzAI</strong> (buzzai.cc)</td>
-<td>✅ $2.50/$12.50 (Claude-code-MAX 0.25x)</td>
-<td>Fable 5</td>
+<td>✅</td>
+<td>$2.50/$12.50 (Claude-code-MAX 0.25x)</td>
 <td>Dostępny. max 0.25x, aws 0.08x, Claude-code-MAX 0.2x</td>
-</tr>
-<tr>
-<td><strong>aigcbest.top</strong> (NewAPI/0api)</td>
-<td>❌</td>
-<td>Opus 4.8</td>
-<td>Piątek-niedziela (12-14.06)</td>
-</tr>
-<tr>
-<td><strong>dmxapi.com</strong></td>
-<td>❌</td>
-<td>Opus 4.1</td>
-<td>1-2 tygodnie</td>
-</tr>
-<tr>
-<td><strong>siliconflow.cn</strong></td>
-<td>❌</td>
-<td>brak Claude</td>
-<td>(tylko Qwen/DeepSeek/GLM/Kimi)</td>
-</tr>
-<tr>
-<td><strong>nextai-code.com</strong></td>
-<td>❌</td>
-<td>Haiku 4-5</td>
-<td>—</td>
-</tr>
-<tr>
-<td><strong>Wei-Shaw/claude-relay-service</strong></td>
-<td>❌</td>
-<td>Opus 4.7</td>
-<td>self-host, GitHub 12k⭐</td>
 </tr>
 </tbody></table>
 <p>Szacunek cen u resellerów (po adapt, marża 50-100%): aigcbest ~¥35-70/M input, ~¥175-350/M output. W USD: $5-10/M input, $25-70/M output (taniej niż Claude bezpośrednio dla płacących kartą zagraniczną).</p>
@@ -321,11 +296,15 @@
 <li><strong>Anthropic IPO</strong> — czerwiec 2026, Fable 5 to demo "responsible scaling"</li>
 <li><strong>Biomedical trusted-access</strong> — zapowiedziany program zwężenia bio/chem blokad</li>
 </ul>
-<h2>Praktyczny plan dla programistów</h2>
-<p><strong>Dziś:</strong> nic nie zmieniaj. Stack na Sonnet 4.6 / Opus 4.8 / DeepSeek V4 / Kimi K2.6.</p>
-<p><strong>Za tydzień:</strong> benchmark swojego najtrudniejszego real tasku na Fable 5 vs Opus 4.8. Zmierz: quality, latency, cost.</p>
-<p><strong>Za miesiąc:</strong> jeśli Fable 5 realnie bije Opus 4.8 na twoich taskach — przenieś <strong>specific high-leverage flows</strong> (legacy migration, complex refactor) na Fable 5. Reszta zostaje na tańszych.</p>
-<p><strong>Za kwartał:</strong> ceny u resellerów powinny spaść. Wtedy Fable 5 w $5-7/M input zaczyna mieć real ROI.</p>
+<h2>Plany dla programistów</h2>
+
+<div class="image-gallery">
+  <h3>Infografiki porównawcze</h3>
+  <figure><img src="/assets/img/fable5/07_pricing_comparison.png" alt="Wykres słupkowy porównujący ceny Fable 5 u 7 providerów: Anthropic, AWS Bedrock, Vertex AI, VSLLM pay-as-you-go, BuzzAI w trzech tierach"><figcaption>1. Ceny Fable 5 u providerów — BuzzAI aws 0.08x jest 12.5x tanszy niz oficjalna Anthropic</figcaption></figure>
+  <figure><img src="/assets/img/fable5/10_cost_ratio_donut.png" alt="Wykres kolowy (donut) pokazujacy udzial kosztow input Fable 5: BuzzAI aws 0.08x = 8%, BuzzAI Claude-MAX 0.2x, BuzzAI max 0.25x, VSLLM, Anthropic"><figcaption>2. Stosunek kosztow input Fable 5 — BuzzAI aws 0.08x to 8% oficjalnej ceny Anthropic</figcaption></figure>
+  <figure><img src="/assets/img/fable5/09_claude_tiers.png" alt="Wykres podwojny porownujacy Claude tiers (Haiku 4.5, Sonnet 4.6, Opus 4.8, Fable 5, Mythos 5) pod katem ceny input vs SWE-Bench Pro"><figcaption>3. Claude tiers — cena input vs SWE-Bench Pro (Fable 5 kosztuje 10x Haiku, ale daje +11% vs Opus 4.8)</figcaption></figure>
+  <figure><img src="/assets/img/fable5/08_benchmark_swebench.png" alt="Wykres slupkowy SWE-Bench Pro: Claude Fable 5 80.3%, Mythos Preview 85.4%, DeepSeek V4 Pro 77.4%, Claude Opus 4.8 69.2%, GPT-5.5 58.6%, Gemini 3.1 Pro 54.2%"><figcaption>4. SWE-Bench Pro — Fable 5 ma 80.3% (jako jedyny publiczny), Mythos Preview 85.4% (tylko Project Glasswing), DeepSeek V4 Pro 77.4% open source</figcaption></figure>
+</div>
 <h2>Stripe Ruby Migration — case study</h2>
 <p>50M-line codebase zmigrowany w <strong>1 dzień</strong> vs <strong>team of 2 months</strong> robiący to samo ręcznie. To nie marketing — real customer data z Project Glasswing partnerów. Fable 5 iteruje po plikach, pisze patch, uruchamia testy i naprawia własny błąd. To jest real use case, nie demo.</p>
 <h2>Źródła</h2>
