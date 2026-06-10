@@ -11,8 +11,8 @@
 
 <style>
 .article-body table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
-.article-body th, .article-body td { border: 1px solid rgba(127,127,127,0.3); padding: 0.5rem 0.75rem; text-align: left; }
-.article-body th { background: rgba(127,127,127,0.1); font-weight: 600; }
+.article-body th, .article-body td { border: 1px solid rgba(127,127,127,0.3); padding: 0.5rem 0.75rem; text-align: left; vertical-align: top; }
+.article-body th { background: rgba(127,127,127,0.1); font-weight: 600; white-space: nowrap; }
 .article-body td code { font-size: 0.85em; }
 .image-gallery { margin: 2rem 0; padding-top: 1rem; border-top: 1px solid rgba(127,127,127,0.3); }
 .image-gallery h3 { margin-bottom: 1rem; }
@@ -99,10 +99,10 @@
 <td>Tylko Project Glasswing</td>
 </tr>
 <tr>
-<td>**Mythos-class (public)**</td>
-<td>**Claude Fable 5**</td>
-<td>**$10/$50**</td>
-<td>**Nowy**</td>
+<td><strong>Mythos-class (public)</strong></td>
+<td><strong>Claude Fable 5</strong></td>
+<td><strong>$10/$50</strong></td>
+<td><strong>Nowy</strong></td>
 </tr>
 <tr>
 <td>Flagship</td>
@@ -162,7 +162,7 @@
 <td>❌</td>
 </tr>
 <tr>
-<td>**Project Glasswing**</td>
+<td><strong>Project Glasswing</strong></td>
 <td>—</td>
 <td>✅</td>
 </tr>
@@ -176,43 +176,102 @@
 <th>ETA</th>
 </tr></thead><tbody>
 <tr>
-<td>**VSLLM**</td>
-<td>❌</td>
-<td>(brak)</td>
-<td>Wolny pipeline Anthropic</td>
+<td><strong>VSLLM</strong></td>
+<td>✅ ¥60/¥300 (~$8.40/$42/M)</td>
+<td>Fable 5</td>
+<td>Dostępny (default group 2x = ¥120/¥600 real)</td>
 </tr>
 <tr>
-<td>**aigcbest.top** (NewAPI/0api)</td>
+<td><strong>BuzzAI</strong> (buzzai.cc)</td>
+<td>✅ $2.50/$12.50 (Claude-code-MAX 0.25x)</td>
+<td>Fable 5</td>
+<td>Dostępny. max 0.25x, aws 0.08x, Claude-code-MAX 0.2x</td>
+</tr>
+<tr>
+<td><strong>aigcbest.top</strong> (NewAPI/0api)</td>
 <td>❌</td>
-<td>Opus 4.7</td>
+<td>Opus 4.8</td>
 <td>Piątek-niedziela (12-14.06)</td>
 </tr>
 <tr>
-<td>**dmxapi.com**</td>
+<td><strong>dmxapi.com</strong></td>
 <td>❌</td>
 <td>Opus 4.1</td>
 <td>1-2 tygodnie</td>
 </tr>
 <tr>
-<td>**siliconflow.cn**</td>
+<td><strong>siliconflow.cn</strong></td>
 <td>❌</td>
 <td>brak Claude</td>
 <td>(tylko Qwen/DeepSeek/GLM/Kimi)</td>
 </tr>
 <tr>
-<td>**nextai-code.com**</td>
+<td><strong>nextai-code.com</strong></td>
 <td>❌</td>
 <td>Haiku 4-5</td>
 <td>—</td>
 </tr>
 <tr>
-<td>**Wei-Shaw/claude-relay-service**</td>
+<td><strong>Wei-Shaw/claude-relay-service</strong></td>
 <td>❌</td>
 <td>Opus 4.7</td>
 <td>self-host, GitHub 12k⭐</td>
 </tr>
 </tbody></table>
 <p>Szacunek cen u resellerów (po adapt, marża 50-100%): aigcbest ~¥35-70/M input, ~¥175-350/M output. W USD: $5-10/M input, $25-70/M output (taniej niż Claude bezpośrednio dla płacących kartą zagraniczną).</p>
+<h2>Ceny u providerów (Fable 5, $/$M in/out)</h2>
+<table>
+<thead><tr>
+<th>Provider</th>
+<th>Input</th>
+<th>Output</th>
+<th>Cache read</th>
+<th>Status</th>
+</tr></thead><tbody>
+<tr>
+<td>Anthropic (oficjalna)</td>
+<td>$10.00</td>
+<td>$50.00</td>
+<td>$1.00</td>
+<td>Claude API, AWS Bedrock, Vertex AI</td>
+</tr>
+<tr>
+<td><strong>BuzzAI</strong> · aws 0.08x</td>
+<td><strong>$0.80</strong></td>
+<td><strong>$4.00</strong></td>
+<td>$0.08</td>
+<td>Najtaniej, 12.5× taniej od oficjalnej</td>
+</tr>
+<tr>
+<td><strong>BuzzAI</strong> · Claude-code-MAX 0.2x</td>
+<td><strong>$2.00</strong></td>
+<td><strong>$10.00</strong></td>
+<td>$0.20</td>
+<td>5× taniej</td>
+</tr>
+<tr>
+<td><strong>BuzzAI</strong> · max 0.25x</td>
+<td>$2.50</td>
+<td>$12.50</td>
+<td>$0.25</td>
+<td>4× taniej</td>
+</tr>
+<tr>
+<td><strong>VSLLM</strong> · default 2x</td>
+<td>¥120 ($16.80)</td>
+<td>¥600 ($84)</td>
+<td>¥12 ($1.68)</td>
+<td>Drożej niż oficjalna (marża + kurs CNY)</td>
+</tr>
+<tr>
+<td><strong>VSLLM</strong> · pay-as-you-go (baza)</td>
+<td>¥60 (~$8.40)</td>
+<td>¥300 (~$42)</td>
+<td>¥6 (~$0.84)</td>
+<td>Porównywalne z oficjalną</td>
+</tr>
+</tbody></table>
+<p><strong>Wniosek:</strong> BuzzAI z tierem aws 0.08x to najtańsza ścieżka do Fable 5 — 12.5× taniej niż bezpośrednio u Anthropic. VSLLM w bazie ~równy cenowo, ale w default group 2x droższy. Alipay/WeChat Pay na BuzzAI i VSLLM = obejście zagranicznej karty.</p>
 <h2>Open source vs closed</h2>
 <table>
 <thead><tr>
@@ -222,8 +281,8 @@
 <th>Tier</th>
 </tr></thead><tbody>
 <tr>
-<td>**Claude Fable 5**</td>
-<td>**80.3%**</td>
+<td><strong>Claude Fable 5</strong></td>
+<td><strong>80.3%</strong></td>
 <td>$10/$50</td>
 <td>Closed frontier</td>
 </tr>
@@ -285,21 +344,6 @@
 <hr>
 <p>*STEM News · auto-publikowane z wątku Discord 1512398228384120864 · GitHub Actions daily*</p>
 <p>*Rozszerzane przez <code>MiniMax-M3</code> (vsllm) · Vanilla HTML+CSS · GitHub Pages*</p>
-<p>!<a href="../assets/img/fable5/01_hero_fable5.png" target="_blank" rel="noopener noreferrer">Claude Fable 5 - hero</a></p>
-<p>!<a href="../assets/img/fable5/02_before_after.png" target="_blank" rel="noopener noreferrer">Before/After Fable 5</a></p>
-<p>!<a href="../assets/img/fable5/03_anthropic_tiers.png" target="_blank" rel="noopener noreferrer">Claude tiers - Haiku/Sonnet/Fable</a></p>
-<p>!<a href="../assets/img/fable5/04_ai_army.png" target="_blank" rel="noopener noreferrer">Global AI compute race</a></p>
-<p>!<a href="../assets/img/fable5/05_solo_developer.png" target="_blank" rel="noopener noreferrer">Solo developer vs hyperscalers</a></p>
-
-<div class="image-gallery">
-  <h3>Ilustracje</h3>
-  <figure><img src="/assets/img/fable5/01_hero_fable5.png" alt="Claude Fable 5 - edytorialny hero przedstawiający AI brain-like structure ze złotymi nodami"><figcaption>1. Hero - Claude Fable 5 jako złota sieć neuronowa w kosmosie</figcaption></figure>
-  <figure><img src="/assets/img/fable5/02_before_after.png" alt="Before/After - chaos czerwonych sieci vs porządek złotych ścieżek Fable 5"><figcaption>2. Porównanie: chaos vs porządek w architekturze Fable 5</figcaption></figure>
-  <figure><img src="/assets/img/fable5/03_anthropic_tiers.png" alt="Trzy mityczne stworzenia Claude tiers: mrówka Haiku, sowa Sonnet, feniks Fable"><figcaption>3. Tier hierarchia Claude - Haiku/Sonnet/Fable</figcaption></figure>
-  <figure><img src="/assets/img/fable5/04_ai_army.png" alt="Industrial-scale data center z kolorowymi światłami serwerów AWS/Google/Azure"><figcaption>4. Globalny wyścig compute - hyperscaler data centers</figcaption></figure>
-  <figure><img src="/assets/img/fable5/05_solo_developer.png" alt="Pojedynczy programista na wzgórzu patrzący na miasto pełne hologramowych billboardów AI"><figcaption>5. Solo developer vs hyperscalers - zmierzch czy świt?</figcaption></figure>
-  <figure><img src="/assets/img/fable5/06_open_source.png" alt="Magic-realizm: drewniana szafka z otwartą szufladą Open Source AI pełną skarbów"><figcaption>6. Open source AI - ukryty skarb w zasięgu ręki</figcaption></figure>
-</div>
 
   </div>
   <footer class="article-footer">
