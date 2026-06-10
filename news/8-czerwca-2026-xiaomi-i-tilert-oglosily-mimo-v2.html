@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Xiaomi MiMo — STEM News</title>
+<meta name="description" content="STEM News — codzienny przegląd AI, security, hardware i open source.">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link rel="alternate" type="application/rss+xml" title="STEM News RSS" href="/rss.xml">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+<body>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a href="/" class="logo"><span class="logo-bracket">[</span>stem<span class="logo-bracket">]</span></a>
+    <nav class="nav">
+      <a href="/?filter=all">Wszystkie</a>
+      <a href="/?filter=ai">AI/ML</a>
+      <a href="/?filter=security">Security</a>
+      <a href="/?filter=hardware">Hardware</a>
+      <a href="/?filter=opensource">Open source</a>
+      <a href="/rss.xml">RSS</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">◐</button>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <header class="article-header">
+    <div class="article-meta">
+      <span>2026-06-10</span>
+      <span>·</span>
+      <span>6 min czytania</span>
+      <span>·</span>
+      <span>4 źródeł</span>
+    </div>
+    <h1>Xiaomi MiMo</h1>
+  </header>
+  <div class="article-body">
+<h3>Co się stało</h3>
+
+<p>8 czerwca 2026 Xiaomi i TileRT ogłosiły MiMo-V2.5-Pro-UltraSpeed, czyli wariant modelu MiMo o skali 1T parametrów, który według deklaracji dekoduje ponad 1000 tokens/s na standardowym serwerze 8-GPU. W demie model osiągnął peak 1200 tokens/s, bez użycia custom silicon typu Cerebras wafer-scale, Groq LPU czy Google TPU.</p>
+
+<p>Najważniejszy punkt nie dotyczy wyłącznie samej liczby tokenów na sekundę, ale tego, że została ona uzyskana na commodity GPU stack. Xiaomi i TileRT twierdzą, że połączenie FP4 quantization, draft model oraz systemu TileRT z Persistent Engine Kernel pozwoliło przesunąć 1T+ inference w kierunku infrastruktury dostępniejszej niż dedykowane układy akceleracyjne.</p>
+
+<h3>Kontekst</h3>
+
+<p>W ostatnich generacjach dużych modeli językowych coraz wyraźniej widać, że sama jakość odpowiedzi nie jest jedyną osią konkurencji. Dla praktycznych wdrożeń równie ważne są latency, throughput i koszt wygenerowanego tokena. Model może być bardzo silny, ale jeśli generuje odpowiedź zbyt wolno, ogranicza to jego użyteczność w workflow interaktywnych, agentowych i real-time. Właśnie dlatego wynik ponad 1000 tokens/s dla modelu 1T parametrów jest istotny: dotyczy klasy modeli, która zwykle kojarzy się z dużym kosztem inferencji oraz specjalizowaną infrastrukturą.</p>
+
+<p>Dotychczas 1T+ inference przy bardzo wysokim throughput była domeną systemów opartych o custom silicon albo wyspecjalizowane platformy. W materiale porównawczym pojawiają się Kimi K2.6 z wynikiem 981 tok/s na Cerebras wafer-scale oraz Groq K2 z około 200 tok/s na LPU. Na tym tle MiMo-V2.5-Pro-UltraSpeed ma pokazywać, że standardowy 8-GPU server, przy odpowiedniej warstwie runtime i optymalizacji operatorów, może wejść w obszar wcześniej kojarzony z dedykowanymi akceleratorami.</p>
+
+<p>Kluczowy jest tutaj udział TileRT. Przy prędkościach rzędu 1000 TPS każdy operator zaczyna być liczony w mikrosekundach, a operacje, które przy niższych prędkościach wydawały się mało istotne, stają się ograniczeniem. Według podanego insightu, bottleneckiem zaczynają być między innymi RMSNorm i RoPE. TileRT odpowiada na to przez Persistent Engine Kernel, czyli podejście, w którym kernel pozostaje rezydentny na GPU, ograniczając koszt przełączania i narzutów wykonania. W efekcie optymalizacja nie sprowadza się tylko do modelu, ale obejmuje cały system uruchomieniowy.</p>
+
+<h3>Kluczowe liczby</h3>
+
+<ul>
+<li>8 czerwca 2026: data ogłoszenia współpracy Xiaomi + TileRT przy MiMo-V2.5-Pro-UltraSpeed.</li>
+<li>1T parametrów: skala modelu MiMo-V2.5-Pro-UltraSpeed w konfiguracji MoE.</li>
+<li>Ponad 1000 tokens/s: deklarowany próg dekodowania na standardowym 8-GPU serverze.</li>
+<li>1200 tokens/s: peak speed pokazany w demie dla MiMo-V2.5-Pro-UltraSpeed.</li>
+<li>981 tok/s: wynik porównawczy Kimi K2.6 na Cerebras wafer-scale.</li>
+<li>Około 200 tok/s: wynik porównawczy Groq K2 na LPU.</li>
+<li>Około 10x generation speed: przyspieszenie względem bazowego MiMo.</li>
+<li>3x cena bazowego MiMo: cena limited-time promo API dla UltraSpeed, przy jednoczesnym około 10x szybszym throughput.</li>
+</ul>
+<h3>Dlaczego to ważne</h3>
+
+<p>Największa implikacja dotyczy infrastruktury. Jeśli 1T-param model może dekodować powyżej 1000 tokens/s na standardowym 8-GPU node, to próg wejścia w frontier inference przesuwa się z „kup lub wynajmij bardzo specjalizowany akcelerator” w stronę „zoptymalizuj runtime i stos na commodity GPU”. To nie oznacza, że specjalizowane układy przestają mieć sens, ale zmienia punkt odniesienia. W praktyce może to zwiększyć presję na efektywność całego software stack: kwantyzację, harmonogramowanie, redukcję overheadu operatorów i utrzymanie kerneli na GPU.</p>
+
+<p>Drugim efektem jest zmiana oczekiwań wobec produktów AI. Wysoka prędkość generowania przestaje być tylko parametrem benchmarkowym, a zaczyna decydować o tym, czy model działa jak narzędzie, czy jak rozszerzenie procesu myślenia użytkownika. W inputcie ujęto to jako „speed is the ultimate edge” oraz granicę między „tool” i „extension of thinking”. Przy sub-second latency użytkownik może iterować szybciej, agent może wykonywać więcej kroków w tym samym czasie, a interfejs zaczyna przypominać dialog w czasie rzeczywistym zamiast sekwencji oczekiwania na odpowiedź.</p>
+
+<p>Trzecia warstwa to rynek API i koszt. Limited-time promo API ma być wycenione na poziomie 3x bazowego MiMo, ale jednocześnie UltraSpeed deklaruje 10x szybszy throughput. Z takiej relacji wynika potencjalnie lepszy cost-per-token, o ile konkretne workloady rzeczywiście wykorzystują tę przepustowość. To ważne szczególnie dla zastosowań, gdzie koszt nie wynika wyłącznie z ceny jednostkowej, ale także z opóźnień, kolejek, liczby równoległych sesji oraz wymagań jakościowych przy długich generacjach.</p>
+
+<h3>Praktyczne rekomendacje</h3>
+
+<p>Dla zespołów budujących produkty na LLM pierwszym krokiem powinno być rozdzielenie dwóch metryk: latency od throughput. Wynik 1200 tokens/s w demie i deklarowane ponad 1000 tokens/s są bardzo mocnym sygnałem, ale praktyczna wartość zależy od wzorca użycia. Inaczej wygląda obciążenie w batchowym generowaniu dużych odpowiedzi, inaczej w interaktywnym czacie, a jeszcze inaczej w agentic workflows, gdzie wiele krótkich kroków musi zmieścić się w sub-second latency. Warto więc testować nie tylko maksymalną prędkość generacji, ale także czas pierwszego tokena, stabilność przy wielu równoległych zapytaniach i zachowanie przy promptach typowych dla danego produktu.</p>
+
+<p>Drugą rekomendacją jest potraktowanie runtime jako elementu architektury, nie jako warstwy pomocniczej. TileRT pokazuje, że przy 1000 TPS bottleneck może przejść na operatory takie jak RMSNorm i RoPE, które w wolniejszych systemach nie zawsze są pierwszym obszarem optymalizacji. Jeżeli zespół planuje inferencję dużych modeli na commodity GPU, powinien analizować profil wykonania na poziomie mikrosekund, a nie tylko sumaryczne wykorzystanie GPU. Persistent Engine Kernel jest tutaj przykładem kierunku: redukcja narzutów może być równie istotna jak sam wybór modelu.</p>
+
+<p>Trzecia rzecz to ostrożność przy kalkulacji ekonomii. Cena limited-time promo API na poziomie 3x bazowego MiMo może być atrakcyjna przy około 10x szybszym throughput, ale opłacalność zależy od realnego wykorzystania. Jeśli aplikacja nie potrzebuje takiej prędkości, przewaga może być mniejsza. Jeśli natomiast produkt wymaga real-time agentic workflows, multimodal real-time agents albo bardzo szybkiej interakcji, UltraSpeed może przesuwać granicę tego, co da się zbudować bez inwestowania w infrastrukturę klasy $10M Cerebras. W takich przypadkach warto porównać koszt końcowy per token i per completed task, a nie tylko nominalną cenę API.</p>
+
+<p>Dla zespołów badawczych i inżynierskich istotna jest także publiczna dostępność wag na HuggingFace pod nazwą XiaomiMiMo/MiMo-V2.5-Pro-UltraSpeed. Nie oznacza to automatycznie, że każdy będzie w stanie odtworzyć wynik 1200 tokens/s, bo wynik zależy od pełnego stacku, w tym FP4 quantization, draft model i TileRT system. Daje jednak punkt startowy do analizy architektury, benchmarków i integracji z własnymi pipeline’ami. W praktyce należy traktować model i runtime jako parę: same wagi bez odpowiedniej warstwy wykonawczej mogą nie dać deklarowanej przewagi.</p>
+
+<p>Najbardziej sensowne zastosowania to te, w których szybkość generacji bezpośrednio przekłada się na jakość doświadczenia użytkownika lub wydajność systemu. Dotyczy to agentów wykonujących wiele kroków, asystentów technicznych pracujących w pętli iteracyjnej, narzędzi do kodu, a także przyszłych multimodal real-time agents. W takich scenariuszach różnica między około 200 tok/s, 981 tok/s i 1200 tokens/s może decydować o tym, czy system jest postrzegany jako płynny i natychmiastowy, czy jako ciężki backend do zadań offline.</p>
+<div class="sources"><h3>Źródła</h3><ul><li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1u0buhm/xiaomi_just_claimed_1000_tps_on_a_1t_model_using/" target="_blank" rel="noopener noreferrer">www.reddit.com/r/LocalLLaMA/comments/1u0buhm/xiaomi_just_cla</a></li><li><a href="https://huggingface.co/XiaomiMiMo" target="_blank" rel="noopener noreferrer">huggingface.co/XiaomiMiMo</a></li><li><a href="https://www.marktechpost.com/2026/06/08/xiaomi-mimo-and-tilert-push-a-1-trillion-parameter-model-past-1000-tokens-per-second-on-commodity-gpus" target="_blank" rel="noopener noreferrer">www.marktechpost.com/2026/06/08/xiaomi-mimo-and-tilert-push-</a></li><li><a href="https://mimo.xiaomi.com/blog/mimo-tilert-1000tps" target="_blank" rel="noopener noreferrer">mimo.xiaomi.com/blog/mimo-tilert-1000tps</a></li></ul></div>
+  </div>
+  <footer class="article-footer">
+    <a href="/" class="back-link">← Wszystkie newsy</a>
+    <div class="discord-refs">
+      <span>Discord msg IDs:</span>
+      <code>1514159555326771200</code>
+    </div>
+  </footer>
+</article>
+</main>
+<footer class="footer">
+  <div class="container">
+    <p>STEM News · auto-publikowane z wątku Discord 1512398228384120864 · GitHub Actions daily</p>
+    <p class="muted">Rozszerzane przez <code>gpt-5.5-pro20x</code> (vsllm) · Vanilla HTML+CSS · GitHub Pages</p>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Claude Fable 5 — pierwszy publiczny model Mythos — STEM News</title>
+<meta name="description" content="STEM News — codzienny przegląd AI, security, hardware i open source.">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link rel="alternate" type="application/rss+xml" title="STEM News RSS" href="/rss.xml">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+<body>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a href="/" class="logo"><span class="logo-bracket">[</span>stem<span class="logo-bracket">]</span></a>
+    <nav class="nav">
+      <a href="/?filter=all">Wszystkie</a>
+      <a href="/?filter=ai">AI/ML</a>
+      <a href="/?filter=security">Security</a>
+      <a href="/?filter=hardware">Hardware</a>
+      <a href="/?filter=opensource">Open source</a>
+      <a href="/rss.xml">RSS</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">◐</button>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <header class="article-header">
+    <div class="article-meta">
+      <span>2026-06-10</span>
+      <span>·</span>
+      <span>7 min czytania</span>
+      <span>·</span>
+      <span>4 źródeł</span>
+    </div>
+    <h1>Claude Fable 5 — pierwszy publiczny model Mythos</h1>
+  </header>
+  <div class="article-body">
+<h3>Co się stało</h3>
+
+<p>9 czerwca 2026 Anthropic opublikował Claude Fable 5, pierwszy publicznie dostępny model klasy Mythos, oraz restricted Claude Mythos 5 przeznaczony tylko dla Project Glasswing. Firma podkreśla, że nie są to dwa różne modele: „Fable 5 and Mythos 5 are not two different models. They are the same model, packaged two ways.”</p>
+
+<p>Najważniejsza zmiana polega na tym, że ten sam rdzeń modelu został udostępniony w dwóch wariantach: publicznym, zabezpieczonym Claude Fable 5 oraz ograniczonym Claude Mythos 5, w którym część zabezpieczeń została zdjęta dla zastosowań cyberdefensywnych. Cena publicznego Fable 5 wynosi $10 za 1M tokenów wejściowych i $50 za 1M tokenów wyjściowych.</p>
+
+<h3>Kontekst</h3>
+
+<p>Anthropic przeskoczył bezpośrednio z Opus 4.8, wydanego w maju 2026, do Fable 5. Nie istnieją publiczne Fable 1-4, co sugeruje, że nazwa „Fable” nie oznacza standardowej kolejnej generacji w linii produktowej, tylko bezpiecznie opakowaną wersję modelu Mythos-class. Sam wybór nazwy „Fable”, czyli „bajka”, ma sygnalizować wariant Mythos-class przeznaczony do ogólnego użytku, a nie pełny, mniej ograniczony model dla wyspecjalizowanych zastosowań.</p>
+
+<p>Istotą premiery jest architektura „sandwich”. Publiczny Fable 5 działa jako model premium, ale w sytuacjach uznanych za wysokiego ryzyka nie kontynuuje samodzielnie odpowiedzi. Gdy classifier wykryje obszary takie jak cyber, bio, chem lub distillation, Fable 5 cicho przekierowuje zapytanie do Opus 4.8. Według podanych danych mniej niż 5% sesji uruchamia taki safety classifier. Oznacza to, że większość użytkowników korzysta z możliwości modelu Mythos-class, ale określone kategorie ryzyka są obsługiwane przez wcześniejszy, bardziej ograniczony model.</p>
+
+<p>Równolegle Anthropic udostępnił Mythos 5 w trybie restricted dla Project Glasswing, opisanego jako program dla cyber defenders. To właśnie w tym wariancie część zabezpieczeń jest zdjęta. Dlatego wyniki związane z zadaniami ofensywnymi trzeba czytać bardzo precyzyjnie: Fable 5 ma 0% progress na offensive cyber tasks, a wynik ExploitBench 78.0% dotyczy Mythos 5, nie publicznej Fable. Ten podział jest kluczowy, bo Anthropic jednocześnie pokazuje zdolności modelu frontier i ogranicza ich publiczną ekspozycję.</p>
+
+<h3>Kluczowe liczby</h3>
+
+<ul>
+<li><strong>9 czerwca 2026</strong> — data publikacji Claude Fable 5 oraz restricted Claude Mythos 5.</li>
+<li><strong>$10 per 1M input / $50 per 1M output</strong> — cena Fable 5; w pierwszym opisie ujęta jako <strong>$10/$50 za M tokenów</strong>.</li>
+<li><strong>80.3%</strong> — wynik Fable 5 w SWE-Bench Pro, wobec <strong>58.6%</strong> dla GPT-5.5 i <strong>54.2%</strong> dla Gemini 3.1 Pro; różnica względem GPT-5.5 to około dwudziestodwupunktowa przepaść w kodowaniu.</li>
+<li><strong>29.3%</strong> — wynik w FrontierCode Diamond xhigh; to 2× lepiej od Opus 4.8 (<strong>13.4%</strong>) i 5× lepiej od GPT-5.5 (<strong>5.7%</strong>).</li>
+<li><strong>1932 ELO</strong> — wynik GDPval-AA dla Fable 5, wobec <strong>1890</strong> dla Opus 4.8 oraz <strong>1769</strong> dla GPT-5.5.</li>
+<li><strong>1M / 128K</strong> — context window deklarowany dla modelu.</li>
+<li><strong>&lt;5%</strong> — odsetek sesji, które triggerują safety classifier i fallback do Opus 4.8.</li>
+<li><strong>50 mln linii Ruby w 1 dzień</strong> — migracja Stripe Ruby Migration wykonana przez Fable 5; ręcznie oznaczałoby to team pracujący przez <strong>2+ miesiące</strong>.</li>
+<li><strong>9 z 14 protein targets</strong> — liczba celów białkowych wskazanych przez Mythos 5 jako strong candidates.</li>
+<li><strong>138 gatunków</strong> — zakres single-cell data w tygodniu autonomous research prowadzonym przez Mythos 5; powstały custom ML model był <strong>100x mniejszy</strong> niż model opublikowany w *Science* i go pobił.</li>
+<li><strong>1000+ godzin testów</strong> i <strong>30 techniques</strong> — zakres testów bezpieczeństwa, w których nie znaleziono universal jailbreaks; jednocześnie UK AISI ma postępy.</li>
+</ul>
+<h3>Dlaczego to ważne</h3>
+
+<p>Premiera Fable 5 przesuwa punkt ciężkości z demonstracji możliwości modeli do zastosowań produkcyjnych w kodzie i nauce. Najbardziej konkretne case study dotyczy Stripe Ruby Migration: Fable 5 miał przeprowadzić codebase-wide migration na 50 mln linii Ruby w 1 dzień, podczas gdy ręcznie wymagałoby to zespołu przez 2+ miesiące. Opis procesu jest istotny technicznie: model iteruje po plikach, pisze patch, uruchamia testy i naprawia własny błąd. To nie jest tylko generowanie fragmentu kodu, ale pętla pracy z repozytorium, testami i korektą.</p>
+
+<p>Dla zespołów inżynieryjnych ważna jest także cena i pozycjonowanie. Fable 5 kosztuje $10/$50 za 1M tokenów, czyli 2× drożej od Opus 4.8, ale 5× taniej od wycofanego Mythos Preview. W drugim opisie podano, że cena jest mniejsza niż połowa ceny Mythos Preview oraz że model jest darmowy do 22 czerwca na Pro/Max/Team. W praktyce Anthropic buduje nowy tier „premium Opus”: droższy niż dotychczasowy topowy model publiczny, ale tańszy niż wcześniejszy eksperymentalny dostęp do Mythos Preview.</p>
+
+<p>Znaczenie wykracza poza programowanie. W vision Fable 5 wygrał Pokémon FireRed, używając tylko surowych screenshotów; wcześniejsze modele Claude potrzebowały complex helper harnesses. W drug design Mythos 5 wskazał 9 z 14 protein targets jako strong candidates i miał dać około 10x acceleration dla protein design experts. W genomics Mythos 5 prowadził tydzień autonomous research na single-cell data dla 138 gatunków, tworząc custom ML model 100x mniejszy niż model opublikowany w *Science*, a jednocześnie lepszy od niego według opisu. Z perspektywy STEM oznacza to przejście frontieru z „demo toy” do „production science”, przynajmniej w tych pokazanych kategoriach.</p>
+
+<p>Jednocześnie najważniejsze ryzyko dotyczy rozdzielenia możliwości od dostępności. Publiczna Fable nie ma wykonywać zadań ofensywnych: ma 0% progress na offensive cyber tasks, bo high-risk zapytania są przekierowywane do Opus 4.8. Z kolei wynik ExploitBench 78.0% należy do Mythos 5, a nie do publicznej Fable. To rozróżnienie jest kluczowe dla oceny bezpieczeństwa, compliance i odpowiedzialnego wdrożenia. Anthropic komunikuje, że nie było universal jailbreaks w 1000+ godzin testów obejmujących 30 techniques, ale jednocześnie zaznaczono, że UK AISI ma postępy. Sam fakt istnienia postępów po stronie UK AISI jest sygnałem, że ocena zabezpieczeń nie jest zamknięta.</p>
+
+<h3>Praktyczne rekomendacje</h3>
+
+<p>Dla zespołów software engineering najbardziej naturalnym zastosowaniem Fable 5 są migracje kodu, refaktoryzacje i prace obejmujące wiele plików. Case Stripe Ruby Migration pokazuje wzorzec pracy, który warto odtworzyć ostrożnie: model powinien iterować po plikach, generować patch, uruchamiać testy i poprawiać błędy wynikające z testów. Należy traktować go jako element pipeline’u z walidacją, a nie jako jednorazowy generator zmian. Skoro przykład dotyczył 50 mln linii Ruby i 1 dnia pracy zamiast zespołu przez 2+ miesiące, największy sens biznesowy mają zadania, w których koszt koordynacji i pokrycia całej bazy kodu jest wysoki.</p>
+
+<p>Przy wdrożeniu trzeba uwzględnić architekturę fallback. Mniej niż 5% sesji triggeruje safety classifier, ale dla organizacji pracujących na styku cyber, bio, chem lub distillation ten odsetek może mieć znaczenie operacyjne. Jeśli część zapytań będzie cicho przekierowywana do Opus 4.8, należy spodziewać się innych właściwości odpowiedzi w tych obszarach. Warto projektować procesy tak, aby zadania wysokiego ryzyka były jawnie rozdzielone od standardowych zadań inżynieryjnych i badawczych. Szczególnie w cyberbezpieczeństwie trzeba pamiętać, że publiczna Fable nie jest modelem, któremu przypisano wynik ExploitBench 78.0%; ten wynik dotyczy restricted Mythos 5.</p>
+
+<p>Dla zespołów STEM praktyczne znaczenie ma rozróżnienie między Fable 5 i Mythos 5. Publiczny model daje dostęp do klasy Mythos w bezpieczniejszym opakowaniu i może być używany w codziennej pracy analitycznej, programistycznej oraz przy zadaniach vision, takich jak praca bez complex helper harnesses. Natomiast przykłady drug design i genomics odnoszą się do Mythos 5: 9 z 14 protein targets jako strong candidates, około 10x acceleration dla protein design experts, tydzień autonomous research na danych single-cell dla 138 gatunków oraz custom ML model 100x mniejszy niż model z *Science*. Przy planowaniu projektów badawczych nie należy więc automatycznie zakładać, że wszystkie te właściwości są dostępne w identycznej formie w publicznym Fable 5.</p>
+
+<p>Warto też przeanalizować ekonomię użycia. Cena $10 per 1M input i $50 per 1M output oznacza tier droższy niż Opus 4.8, ale znacznie tańszy niż wycofany Mythos Preview. Jeśli model ma wykonywać duże migracje i iteracje po repozytoriach, koszt tokenów wyjściowych może szybko rosnąć. Najrozsądniejsze będą workflow, w których Fable 5 wykonuje zadania o wysokiej wartości: szerokie zmiany w codebase, trudne benchmarkowo problemy programistyczne, analizę wielu plików lub wieloetapową korektę z testami. Do prostych zapytań i rutynowych odpowiedzi ekonomicznie lepszy może być niższy tier, ale to wymaga oceny po stronie użytkownika, bo input nie podaje szczegółów innych planów poza Pro/Max/Team i darmowym dostępem do 22 czerwca.</p>
+<div class="sources"><h3>Źródła</h3><ul><li><a href="https://techcrunch.com/2026/06/09/anthropics-claude-fable-5-is-a-version-of-mythos-the-public-can-access-today/" target="_blank" rel="noopener noreferrer">techcrunch.com/2026/06/09/anthropics-claude-fable-5-is-a-ver</a></li><li><a href="https://www.cnbc.com/2026/06/09/anthropic-mythos-claude-fable-5.html" target="_blank" rel="noopener noreferrer">www.cnbc.com/2026/06/09/anthropic-mythos-claude-fable-5.html</a></li><li><a href="https://x.com/testingcatalog/status/2064391054393049496" target="_blank" rel="noopener noreferrer">x.com/testingcatalog/status/2064391054393049496</a></li><li><a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank" rel="noopener noreferrer">www.anthropic.com/news/claude-fable-5-mythos-5</a></li></ul></div>
+  </div>
+  <footer class="article-footer">
+    <a href="/" class="back-link">← Wszystkie newsy</a>
+    <div class="discord-refs">
+      <span>Discord msg IDs:</span>
+      <code>1514025417877749762, 1514159508593840138</code>
+    </div>
+  </footer>
+</article>
+</main>
+<footer class="footer">
+  <div class="container">
+    <p>STEM News · auto-publikowane z wątku Discord 1512398228384120864 · GitHub Actions daily</p>
+    <p class="muted">Rozszerzane przez <code>gpt-5.5-pro20x</code> (vsllm) · Vanilla HTML+CSS · GitHub Pages</p>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

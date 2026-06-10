@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Claude Fable 5 — dostępność, Polska, open source vs closed — STEM News</title>
+<meta name="description" content="STEM News — codzienny przegląd AI, security, hardware i open source.">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link rel="alternate" type="application/rss+xml" title="STEM News RSS" href="/rss.xml">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+<body>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a href="/" class="logo"><span class="logo-bracket">[</span>stem<span class="logo-bracket">]</span></a>
+    <nav class="nav">
+      <a href="/?filter=all">Wszystkie</a>
+      <a href="/?filter=ai">AI/ML</a>
+      <a href="/?filter=security">Security</a>
+      <a href="/?filter=hardware">Hardware</a>
+      <a href="/?filter=opensource">Open source</a>
+      <a href="/rss.xml">RSS</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">◐</button>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <header class="article-header">
+    <div class="article-meta">
+      <span>2026-06-09</span>
+      <span>·</span>
+      <span>7 min czytania</span>
+      <span>·</span>
+      <span>0 źródeł</span>
+    </div>
+    <h1>Claude Fable 5 — dostępność, Polska, open source vs closed</h1>
+  </header>
+  <div class="article-body">
+<h3>Co się stało</h3>
+
+<p>Claude Fable 5 trafił do szerokiej dystrybucji przez Claude API, claude.ai Pro/Max/Team/Enterprise, Claude Code oraz główne platformy chmurowe: AWS Bedrock, Google Vertex AI i Microsoft Foundry. Jednocześnie Mythos 5 pozostaje ograniczony do Project Glasswing i jest dostępny tylko w 15 krajach.</p>
+
+<p>Dla polskich użytkowników i zespołów korzystających z resellerów sytuacja na 9.06 wieczór pozostaje nierówna: część kanałów ma wolny pipeline, część zapowiada dostęp dopiero po weekendzie lub w perspektywie 1-2 tygodni. Najważniejszy wniosek z porównania modeli jest pragmatyczny: Fable 5 wygrywa w SWE-Bench, ale DeepSeek V4 Pro oferuje 95% wartości Fable 5 za 1% ceny, więc Fable 5 należy traktować jako model do wybranych zadań o wysokiej dźwigni, a nie domyślny silnik dla całego stacku.</p>
+
+<h3>Kontekst</h3>
+
+<p>Premiera Claude Fable 5 jest istotna nie tylko dlatego, że model pojawił się w Claude API i w interfejsie claude.ai, ale przede wszystkim dlatego, że od razu wchodzi do środowisk, w których firmy realnie budują produkcyjne integracje: AWS Bedrock, Google Vertex AI i Microsoft Foundry. W AWS Bedrock model jest widoczny jako `anthropic.claude-fable-5` w regionie US East N. Virginia. To ważne dla zespołów, które nie chcą utrzymywać osobnych integracji z dostawcą modelu i wolą korzystać z istniejących polityk dostępu, rozliczeń oraz infrastruktury chmurowej.</p>
+
+<p>Dostępność w claude.ai Pro/Max/Team/Enterprise, do 22 czerwca za darmo, obniża barierę wejścia dla testów manualnych i półautomatycznych. Zespoły mogą sprawdzić zachowanie Fable 5 na własnych zadaniach bez natychmiastowego przepinania pipeline’ów API. Równolegle Claude Code daje możliwość testowania modelu w kontekście pracy programistycznej: refaktoryzacji, debugowania, pracy z repozytoriami i zadań agentowych. To właśnie w tych scenariuszach Fable 5 ma największą szansę uzasadnić wyższą cenę.</p>
+
+<p>Drugi element tła to kontrast między modelami zamkniętymi i tańszymi alternatywami. W tabeli wyników Claude Fable 5 osiąga 80.3% w SWE-Bench przy cenie $10/$50, podczas gdy DeepSeek V4 Pro osiąga 77.4% przy $0.14/$0.28. Ta różnica cenowa jest kluczowa: DeepSeek V4 Pro jest wskazany jako 70× tańszy, a jednocześnie dostarcza bardzo zbliżoną wartość w tym konkretnym benchmarku. To zmienia sposób myślenia o wdrożeniach: zamiast pytać „który model jest najlepszy”, bardziej sensowne jest pytanie „który model daje najlepszy koszt dla konkretnego przepływu pracy”.</p>
+
+<p>W Polsce dodatkową warstwą problemu jest dostępność przez resellerów. Stan na 9.06 wieczór pokazuje, że VSLLM ma wolny pipeline, aigcbest.top wskazuje okno piątek-nziela, a dmxapi.com mówi o 1-2 tygodniach. Oznacza to, że nawet jeśli model jest formalnie dostępny globalnie przez główne kanały, realny dostęp dla części użytkowników zależnych od pośredników może być opóźniony, droższy albo niestabilny w pierwszej fazie.</p>
+
+<h3>Kluczowe liczby</h3>
+
+<ul>
+<li>Claude Fable 5 jest dostępny przez Claude API, claude.ai Pro/Max/Team/Enterprise, Claude Code, AWS Bedrock, Google Vertex AI i Microsoft Foundry.</li>
+<li>Dostęp w claude.ai Pro/Max/Team/Enterprise jest dostępny do 22 czerwca za darmo.</li>
+<li>W AWS Bedrock model działa jako `anthropic.claude-fable-5` w regionie US East N. Virginia.</li>
+<li>Mythos 5 jest dostępny tylko przez Project Glasswing i tylko w 15 krajach.</li>
+<li>Stan resellerów dla Polski na 9.06 wieczór: VSLLM — wolny pipeline; aigcbest.top — piątek-nziela; dmxapi.com — 1-2 tyg.</li>
+<li>Szacunek cen po adapt: ¥35-70/M input oraz ¥175-350/M output.</li>
+<li>Claude Fable 5 osiąga 80.3% SWE-Bench przy cenie $10/$50.</li>
+<li>DeepSeek V4 Pro osiąga 77.4% SWE-Bench przy cenie $0.14/$0.28, czyli jest wskazany jako 70× tańszy.</li>
+<li>Claude Opus 4.8 osiąga 69.2% SWE-Bench przy cenie $5/$25.</li>
+<li>GPT-5.5 osiąga 58.6% SWE-Bench przy cenie $5/$30.</li>
+<li>Gemini 3.1 Pro osiąga 54.2% SWE-Bench przy cenie $1.25/$10.</li>
+<li>Wniosek porównawczy: DeepSeek V4 daje 95% wartości Fable 5 za 1% ceny.</li>
+<li>Przewidywanie dla resellerów: za kwartał ceny mogą spaść do $5-7/M, co ma poprawić real ROI dla większej liczby use case’ów.</li>
+<li>W obserwacji pozostają: OpenAI GPT-5.6 w perspektywie 1-2 tyg?, Google Gemini 3.1 Pro do GA czy 3.2?, Anthropic IPO w czerwcu 2026 oraz biomedical trusted-access program.</li>
+</ul>
+<h3>Dlaczego to ważne</h3>
+
+<p>Największą zmianą nie jest samo pojawienie się kolejnego modelu o wysokim wyniku w benchmarku, ale rosnąca specjalizacja ekonomiczna modeli. Claude Fable 5 ma najlepszy wynik w zestawieniu: 80.3% SWE-Bench. Jednak jego cena $10/$50 oznacza, że nie powinien automatycznie zastępować tańszych modeli w każdym zadaniu. Przy skali produkcyjnej różnica między $10/$50 a $0.14/$0.28 nie jest kosmetyczna. To różnica, która może decydować o tym, czy dany workflow w ogóle ma dodatni zwrot z inwestycji.</p>
+
+<p>Dla zespołów programistycznych najważniejszy jest więc podział zadań. Fable 5 ma sens dla specific high-leverage tasks: long-horizon agentic coding oraz legacy migration 500K+ LOC. Są to przypadki, w których koszt pojedynczego błędu, koszt pracy człowieka albo koszt opóźnienia mogą być znacznie wyższe niż koszt tokenów. Jeśli model pozwala szybciej domknąć trudną migrację, poprawić duży fragment systemu legacy lub utrzymać długi kontekst zadania agentowego, wyższa cena może być uzasadniona.</p>
+
+<p>Jednocześnie dla rutynowych zadań, krótkich promptów, prostych transformacji kodu, klasyfikacji lub mniej krytycznych operacji DeepSeek V4 Pro wygląda znacznie bardziej racjonalnie kosztowo. Deklarowany wniosek, że DeepSeek V4 daje 95% wartości Fable 5 za 1% ceny, przesuwa rekomendację w stronę architektury wielomodelowej. Zamiast jednego „najlepszego” modelu dla wszystkiego, sensowniej budować routing: droższy model tylko tam, gdzie rzeczywiście zwiększa skuteczność na zadaniach o wysokiej wartości.</p>
+
+<p>Dostępność przez chmury publiczne ma też znaczenie organizacyjne. AWS Bedrock, Google Vertex AI i Microsoft Foundry są kanałami, w których łatwiej kontrolować dostęp, budżety i integracje niż w nieformalnych przepływach przez resellerów. Z drugiej strony, użytkownicy zależni od resellerów w Polsce muszą liczyć się z opóźnieniami i zmiennością cen. Stan na 9.06 wieczór pokazuje, że nie wszystkie kanały są gotowe jednocześnie, a ceny po adapt w przedziale ¥35-70/M input i ¥175-350/M output mogą wymagać osobnej kalkulacji względem oficjalnych stawek i alternatyw.</p>
+
+<h3>Praktyczne rekomendacje</h3>
+
+<p>Na dziś rekomendacja jest konserwatywna: nic nie zmieniać. Obecny stack wskazany w planie to Sonnet 4.6, Opus 4.8 i DeepSeek V4. To rozsądne podejście, ponieważ pierwsze dni po premierze często wiążą się z nierówną dostępnością, brakiem pełnych danych kosztowych u resellerów i ograniczoną liczbą porównań na realnych zadaniach. Warto wykorzystać darmowy dostęp w claude.ai Pro/Max/Team/Enterprise do 22 czerwca, ale raczej jako środowisko oceny jakości niż podstawę natychmiastowej migracji.</p>
+
+<p>Za tydzień właściwym krokiem jest benchmark najtrudniejszego real tasku na Fable 5 vs Opus 4.8. Ważne, aby nie testować modelu wyłącznie na prostych promptach lub syntetycznych przykładach. Jeśli Fable 5 ma uzasadniać cenę $10/$50, powinien pokazać przewagę tam, gdzie Opus 4.8 przy $5/$25 nie domyka zadania wystarczająco dobrze. Test powinien obejmować zadanie reprezentatywne dla realnej pracy: dłuższy kontekst, większą zależność między plikami, sekwencję decyzji albo fragment migracji legacy. Tylko wtedy wynik będzie użyteczny dla decyzji budżetowej.</p>
+
+<p>Za miesiąc warto przenieść specific high-leverage flows na Fable 5, a resztę zostawić na tańszych modelach. W praktyce oznacza to wydzielenie osobnych ścieżek: Fable 5 dla long-horizon agentic coding i legacy migration 500K+ LOC, natomiast DeepSeek V4, Sonnet 4.6 lub Opus 4.8 dla zadań o niższym ryzyku i mniejszej wartości jednostkowej. Taki podział ogranicza ryzyko niekontrolowanego wzrostu kosztów i pozwala mierzyć ROI na poziomie konkretnych przepływów, a nie całej organizacji.</p>
+
+<p>Za kwartał warto ponownie przeliczyć ekonomię wdrożenia, ponieważ plan zakłada spadek cen u resellerów do $5-7/M. Jeśli taki poziom cenowy się zmaterializuje, Fable 5 może stać się opłacalny dla większej liczby use case’ów. Do tego czasu lepiej unikać pełnej migracji „na ślepo” i skupić się na danych: koszt na zadanie, odsetek sukcesów, liczba interwencji człowieka, czas do rozwiązania oraz porównanie z Opus 4.8 i DeepSeek V4.</p>
+
+<p>Warto też monitorować kolejne punkty z listy obserwacyjnej: OpenAI GPT-5.6 w horyzoncie 1-2 tyg?, decyzję Google, czy Gemini 3.1 Pro przejdzie do GA czy zostanie zastąpiony przez 3.2?, Anthropic IPO w czerwcu 2026 oraz biomedical trusted-access program. Każdy z tych elementów może wpłynąć na ceny, dostępność lub priorytety produktowe, ale na razie nie powinien zastępować własnych benchmarków na realnych zadaniach.</p>
+
+  </div>
+  <footer class="article-footer">
+    <a href="/" class="back-link">← Wszystkie newsy</a>
+    <div class="discord-refs">
+      <span>Discord msg IDs:</span>
+      <code>1514025419266064584</code>
+    </div>
+  </footer>
+</article>
+</main>
+<footer class="footer">
+  <div class="container">
+    <p>STEM News · auto-publikowane z wątku Discord 1512398228384120864 · GitHub Actions daily</p>
+    <p class="muted">Rozszerzane przez <code>gpt-5.5-pro20x</code> (vsllm) · Vanilla HTML+CSS · GitHub Pages</p>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

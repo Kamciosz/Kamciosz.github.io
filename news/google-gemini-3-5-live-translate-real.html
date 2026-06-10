@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Google Gemini 3.5 Live Translate — real — STEM News</title>
+<meta name="description" content="STEM News — codzienny przegląd AI, security, hardware i open source.">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link rel="alternate" type="application/rss+xml" title="STEM News RSS" href="/rss.xml">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+<body>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a href="/" class="logo"><span class="logo-bracket">[</span>stem<span class="logo-bracket">]</span></a>
+    <nav class="nav">
+      <a href="/?filter=all">Wszystkie</a>
+      <a href="/?filter=ai">AI/ML</a>
+      <a href="/?filter=security">Security</a>
+      <a href="/?filter=hardware">Hardware</a>
+      <a href="/?filter=opensource">Open source</a>
+      <a href="/rss.xml">RSS</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">◐</button>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <header class="article-header">
+    <div class="article-meta">
+      <span>2026-06-10</span>
+      <span>·</span>
+      <span>5 min czytania</span>
+      <span>·</span>
+      <span>4 źródeł</span>
+    </div>
+    <h1>Google Gemini 3.5 Live Translate — real</h1>
+  </header>
+  <div class="article-body">
+<h3>Co się stało</h3>
+
+<p>9 czerwca 2026 Google wydał <strong>Gemini 3.5 Live Translate</strong>, model speech-to-speech do tłumaczenia mowy w czasie rzeczywistym, obsługujący <strong>70+ języków</strong> i <strong>2,000 par językowych</strong>. System działa w trybie ciągłego strumieniowania: tłumaczy fragment wypowiedzi, jednocześnie słuchając kolejnej części, z deklarowanym opóźnieniem <strong>2-3 sekundy</strong> na segment.</p>
+
+<p>Najważniejsza różnica względem klasycznych systemów tłumaczeniowych polega na tym, że Gemini 3.5 Live Translate nie jest prostym pipeline’em audio-text-audio. Google pozycjonuje go jako rozwiązanie audio-to-audio, które zachowuje <strong>intonację, tempo i pitch</strong> oryginalnego mówcy, dzięki czemu rozmowa ma mieć bardziej naturalny, „human-like” przepływ.</p>
+
+<h3>Kontekst</h3>
+
+<p>Tłumaczenie mowy w czasie rzeczywistym od lat jest jednym z najbardziej praktycznych, ale też technicznie trudnych zastosowań modeli AI. Problem nie sprowadza się wyłącznie do rozpoznania słów i podstawienia ich odpowiedników w innym języku. W rozmowie liczy się rytm, pauzy, emocjonalne akcenty, tempo wypowiedzi i moment, w którym druga osoba może naturalnie wejść w dialog. Każde dodatkowe opóźnienie zmienia dynamikę interakcji: spotkanie zaczyna przypominać serię monologów, a nie rozmowę.</p>
+
+<p>Według opisu Google, Gemini 3.5 Live Translate ma przesuwać ten model pracy w stronę tłumaczenia strumieniowego. Tradycyjne systemy translation często czekały na koniec wypowiedzi lub większego fragmentu zdania, zanim wygenerowały tłumaczenie. To poprawiało kompletność kontekstu, ale pogarszało płynność. Live Translate działa inaczej: przetwarza mowę fragmentami, tłumacząc poprzedni segment, gdy użytkownik kontynuuje wypowiedź. Deklarowane <strong>2-3 sekundy</strong> opóźnienia na segment to parametr krytyczny, bo wpływa bezpośrednio na to, czy narzędzie nadaje się do żywych rozmów, spotkań i prezentacji.</p>
+
+<p>Istotna jest także zmiana dostępności sprzętowej. Wcześniej podobne doświadczenie wymagało konfiguracji opartej o <strong>Pixel Buds + Pixel phone</strong>. Teraz, w czerwcu 2026, Live Translate ma działać z dowolnymi earbuds i bez specjalnego hardware’u. To przesuwa technologię z kategorii funkcji powiązanej z konkretnym ekosystemem urządzeń do bardziej ogólnego narzędzia dostępnego w aplikacjach i API. Google udostępnia rozwiązanie w <strong>Google Translate</strong> na <strong>iOS+Android</strong>, w <strong>Gemini API</strong> jako <strong>Public Preview</strong> oraz w <strong>Google Meet</strong> jako <strong>Private Preview</strong>.</p>
+
+<h3>Kluczowe liczby</h3>
+
+<ul>
+<li><strong>9 czerwca 2026</strong> — data wydania Gemini 3.5 Live Translate przez Google.</li>
+<li><strong>70+ języków</strong> — deklarowany zakres obsługiwanych języków w tłumaczeniu speech-to-speech.</li>
+<li><strong>2,000 par językowych</strong> — liczba kombinacji językowych obsługiwanych przez model.</li>
+<li><strong>2-3 sekundy</strong> — opóźnienie na segment w trybie ciągłego strumieniowania.</li>
+<li><strong>$3.50 input / $21 output per 1M tokens</strong> — cena korzystania z Gemini 3.5 Live Translate.</li>
+<li><strong>$1.50/$9</strong> — porównawcza cena Gemini 3.5 Flash, niższa niż Live Translate.</li>
+<li><strong>iOS+Android</strong> — platformy, na których funkcja jest dostępna w Google Translate.</li>
+<li><strong>Public Preview / Private Preview</strong> — status dostępności odpowiednio w Gemini API i Google Meet.</li>
+</ul>
+<h3>Dlaczego to ważne</h3>
+
+<p>Dla zespołów technicznych i badawczych najważniejszą konsekwencją jest obniżenie bariery językowej w codziennej współpracy. Globalne remote teams działają często w środowisku, w którym dokumentacja, spotkania, code review, prezentacje badawcze i dyskusje produktowe odbywają się w języku, który nie dla wszystkich jest pierwszym językiem komunikacji. Klasyczne tłumaczenie tekstu pomaga przy dokumentach i asynchronicznej komunikacji, ale nie rozwiązuje problemu rozmów na żywo. Speech-to-speech z niską latencją może zmienić szczególnie te sytuacje, w których liczy się szybka wymiana argumentów: daily, design review, incident response, warsztaty architektoniczne czy międzykulturowe prezentacje.</p>
+
+<p>Z technicznego punktu widzenia kluczowe jest to, że Google podkreśla zachowanie <strong>intonacji, tempa i pitchu</strong> oryginalnego mówcy. W rozmowie sama poprawność leksykalna nie wystarcza. Ten sam komunikat może oznaczać coś innego w zależności od nacisku, tempa lub tonu. Jeżeli model rzeczywiście przenosi elementy prozodii do tłumaczonego audio, zbliża się do sposobu, w jaki ludzie odbierają naturalną mowę. To szczególnie ważne przy prezentacjach, edukacji, rozmowach wielokulturowych i scenariuszach accessibility, gdzie intencja mówcy jest częścią przekazu, a nie dodatkiem.</p>
+
+<p>Jednocześnie model cenowy pokazuje, że speech-to-speech ma wyraźnie inny koszt niż tańsze warianty tekstowe lub ogólne. Cena <strong>$3.50 input / $21 output per 1M tokens</strong> jest wyższa niż w przypadku Gemini 3.5 Flash, gdzie podano <strong>$1.50/$9</strong>. W praktyce oznacza to, że Live Translate nie powinien być traktowany jako domyślny zamiennik każdego tłumaczenia, ale jako narzędzie do scenariuszy, w których wartość naturalnej rozmowy uzasadnia wyższy koszt. To ważne dla firm planujących integracje przez Gemini API, bo real-time audio może generować inne profile użycia i inne koszty niż klasyczne zapytania tekstowe.</p>
+
+<h3>Praktyczne rekomendacje</h3>
+
+<p>Pierwszy krok to rozdzielenie przypadków użycia według wymaganej interaktywności. Jeżeli zespół potrzebuje tłumaczenia dokumentacji, maili, transkrypcji lub statycznych materiałów, Live Translate nie musi być właściwym wyborem. Jego przewaga pojawia się tam, gdzie rozmowa odbywa się na żywo i gdzie opóźnienie decyduje o jakości doświadczenia. Warto więc testować go przede wszystkim w scenariuszach spotkań międzynarodowych, prezentacji technicznych, rozmów 1:1 oraz sytuacji, w których uczestnicy nie mogą komfortowo przełączać się na wspólny język roboczy.</p>
+
+<p>Druga rekomendacja dotyczy oceny jakości nie tylko na poziomie słów, ale też przepływu rozmowy. W testach wewnętrznych warto mierzyć, czy deklarowane <strong>2-3 sekundy</strong> opóźnienia per segment faktycznie pozwalają na naturalną wymianę zdań. Równie ważne jest subiektywne odczucie uczestników: czy tłumaczenie nie przerywa rytmu spotkania, czy intonacja i tempo pomagają zrozumieć intencję mówcy, czy system radzi sobie z dłuższymi wypowiedziami i czy nie wymusza sztucznego mówienia krótkimi zdaniami. Ponieważ Google opisuje Live Translate jako audio-to-audio, testy powinny obejmować właśnie jakość głosu, prozodii i płynności, a nie tylko zgodność tekstową.</p>
+
+<p>Trzecia kwestia to dobór kanału wdrożenia. Dla użytkowników końcowych naturalnym miejscem testu jest <strong>Google Translate</strong> na <strong>iOS+Android</strong>, ponieważ nie wymaga to budowy własnej integracji. Dla zespołów produktowych i platformowych właściwą ścieżką będzie <strong>Gemini API</strong> w statusie <strong>Public Preview</strong>, ale tu od razu trzeba uwzględnić model kosztowy <strong>$3.50 input / $21 output per 1M tokens</strong>. Z kolei <strong>Google Meet</strong> pozostaje w <strong>Private Preview</strong>, więc jego zastosowanie należy traktować jako ograniczone dostępnościowo. W organizacjach, które wcześniej opierały się na wymaganiu <strong>Pixel Buds + Pixel phone</strong>, warto zweryfikować nowe możliwości pracy z dowolnymi earbuds i bez specjalnego hardware’u, bo może to uprościć adopcję i zmniejszyć zależność od konkretnej konfiguracji sprzętowej.</p>
+<div class="sources"><h3>Źródła</h3><ul><li><a href="https://arstechnica.com/ai/2026/06/google-announces-gemini-3-5-live-translate-for-instant-voice-to-voice-translation" target="_blank" rel="noopener noreferrer">arstechnica.com/ai/2026/06/google-announces-gemini-3-5-live-</a></li><li><a href="https://www.cnet.com/tech/services-and-software/gemini-3-5-live-translation-real-time-multilingual-conversation" target="_blank" rel="noopener noreferrer">www.cnet.com/tech/services-and-software/gemini-3-5-live-tran</a></li><li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-live-3-5-translate" target="_blank" rel="noopener noreferrer">blog.google/innovation-and-ai/models-and-research/gemini-mod</a></li><li><a href="https://x.com/GoogleAI/status/2064366504112505266" target="_blank" rel="noopener noreferrer">x.com/GoogleAI/status/2064366504112505266</a></li></ul></div>
+  </div>
+  <footer class="article-footer">
+    <a href="/" class="back-link">← Wszystkie newsy</a>
+    <div class="discord-refs">
+      <span>Discord msg IDs:</span>
+      <code>1514159524171350026</code>
+    </div>
+  </footer>
+</article>
+</main>
+<footer class="footer">
+  <div class="container">
+    <p>STEM News · auto-publikowane z wątku Discord 1512398228384120864 · GitHub Actions daily</p>
+    <p class="muted">Rozszerzane przez <code>gpt-5.5-pro20x</code> (vsllm) · Vanilla HTML+CSS · GitHub Pages</p>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

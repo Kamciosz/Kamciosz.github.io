@@ -6,6 +6,61 @@
     <description>Codzienny przegląd AI, security, hardware i open source.</description>
     <language>pl</language>
     <item>
+      <title>Claude Fable 5 — pierwszy publiczny model Mythos</title>
+      <link>https://kamciosz.github.io/news/claude-fable-5-pierwszy-publiczny-model-mythos.html</link>
+      <guid>https://kamciosz.github.io/news/claude-fable-5-pierwszy-publiczny-model-mythos.html</guid>
+      <pubDate>2026-06-10T06:49:18.572000+00:00</pubDate>
+      <description>
+
+9 czerwca 2026 Anthropic opublikował Claude Fable 5, pierwszy publicznie dostępny model klasy Mythos, oraz restricted Claude Mythos 5 przeznaczony tylko dla Project Glasswing. Firma podkreśla, że nie są to dwa różne modele: „Fable 5 and Mythos 5 are not two different models. They are the same model, packaged two ways.”
+
+Najważniejsza zmiana polega na tym, że ten sam rdzeń modelu został udostępniony w dwóch wariantach: publicznym, zabezpieczonym Claude Fable 5 oraz ograniczonym </description>
+    </item>
+    <item>
+      <title>Claude Fable 5 — dostępność, Polska, open source vs closed</title>
+      <link>https://kamciosz.github.io/news/claude-fable-5-dostepnosc-polska-open-source-vs-closed.html</link>
+      <guid>https://kamciosz.github.io/news/claude-fable-5-dostepnosc-polska-open-source-vs-closed.html</guid>
+      <pubDate>2026-06-09T21:56:29.185000+00:00</pubDate>
+      <description>
+
+Claude Fable 5 trafił do szerokiej dystrybucji przez Claude API, claude.ai Pro/Max/Team/Enterprise, Claude Code oraz główne platformy chmurowe: AWS Bedrock, Google Vertex AI i Microsoft Foundry. Jednocześnie Mythos 5 pozostaje ograniczony do Project Glasswing i jest dostępny tylko w 15 krajach.
+
+Dla polskich użytkowników i zespołów korzystających z resellerów sytuacja na 9.06 wieczór pozostaje nierówna: część kanałów ma wolny pipeline, część zapowiada dostęp dopiero po weekendz</description>
+    </item>
+    <item>
+      <title>Google Gemini 3.5 Live Translate — real</title>
+      <link>https://kamciosz.github.io/news/google-gemini-3-5-live-translate-real.html</link>
+      <guid>https://kamciosz.github.io/news/google-gemini-3-5-live-translate-real.html</guid>
+      <pubDate>2026-06-10T06:49:22.286000+00:00</pubDate>
+      <description>
+
+9 czerwca 2026 Google wydał , model speech-to-speech do tłumaczenia mowy w czasie rzeczywistym, obsługujący  i . System działa w trybie ciągłego strumieniowania: tłumaczy fragment wypowiedzi, jednocześnie słuchając kolejnej części, z deklarowanym opóźnieniem  na segment.
+
+Najważniejsza różnica względem klasycznych systemów tłumaczeniowych polega na tym, że Gemini 3.5 Live Translate nie jest prost</description>
+    </item>
+    <item>
+      <title>OpenAI planuje &quot;superapp&quot; redesign ChatGPT — Codex prominence + Canva/Booking partnerzy przed IPO</title>
+      <link>https://kamciosz.github.io/news/openai-planuje-superapp-redesign-chatgpt-codex-prominence-canva-booking-partnerz.html</link>
+      <guid>https://kamciosz.github.io/news/openai-planuje-superapp-redesign-chatgpt-codex-prominence-canva-booking-partnerz.html</guid>
+      <pubDate>2026-06-10T06:49:25.984000+00:00</pubDate>
+      <description>
+
+Financial Times podał 7 czerwca 2026 r., że OpenAI przygotowuje największy redesign ChatGPT od momentu jego startu. Celem zmian jest przekształcenie produktu z konsumenckiego chatbota w „superapp” łączącą narzędzia programistyczne, agentów AI oraz usługi partnerów, w tym Canva i Booking.com.
+
+Centralnym elementem nowego kierunku ma być większa prominentność Codex, czyli agenta kodującego OpenAI. Rollout ma nastąpić „in the coming weeks” poprzez aktualizacje strony internetowej </description>
+    </item>
+    <item>
+      <title>Xiaomi MiMo</title>
+      <link>https://kamciosz.github.io/news/8-czerwca-2026-xiaomi-i-tilert-oglosily-mimo-v2.html</link>
+      <guid>https://kamciosz.github.io/news/8-czerwca-2026-xiaomi-i-tilert-oglosily-mimo-v2.html</guid>
+      <pubDate>2026-06-10T06:49:29.714000+00:00</pubDate>
+      <description>
+
+8 czerwca 2026 Xiaomi i TileRT ogłosiły MiMo-V2.5-Pro-UltraSpeed, czyli wariant modelu MiMo o skali 1T parametrów, który według deklaracji dekoduje ponad 1000 tokens/s na standardowym serwerze 8-GPU. W demie model osiągnął peak 1200 tokens/s, bez użycia custom silicon typu Cerebras wafer-scale, Groq LPU czy Google TPU.
+
+Najważniejszy punkt nie dotyczy wyłącznie samej liczby tokenów na sekundę, ale tego, że została ona uzyskana na commodity GPU stack. Xiaomi i TileRT twierdzą, ż</description>
+    </item>
+    <item>
       <title>Mac M-series + llama.cpp — 70B LLM w 32GB RAM</title>
       <link>https://kamciosz.github.io/news/mac-m-series-llama-cpp-70b-llm-w-32gb-ram.html</link>
       <guid>https://kamciosz.github.io/news/mac-m-series-llama-cpp-70b-llm-w-32gb-ram.html</guid>
