@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tokenpocalypse — firmy 3x ponad budget na AI tokeny, Linux Foundation reaguje — STEM News</title>
+<meta name="description" content="STEM News — codzienny przegląd AI, security, hardware i open source.">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link rel="alternate" type="application/rss+xml" title="STEM News RSS" href="/rss.xml">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+<body>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a href="/" class="logo"><span class="logo-bracket">[</span>stem<span class="logo-bracket">]</span></a>
+    <nav class="nav">
+      <a href="/?filter=all">Wszystkie</a>
+      <a href="/?filter=ai">AI/ML</a>
+      <a href="/?filter=security">Security</a>
+      <a href="/?filter=hardware">Hardware</a>
+      <a href="/?filter=opensource">Open source</a>
+      <a href="/rss.xml">RSS</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">◐</button>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <header class="article-header">
+    <div class="article-meta">
+      <span>2026-06-11</span>
+      <span>·</span>
+      <span>6 min czytania</span>
+      <span>·</span>
+      <span>4 źródeł</span>
+    </div>
+    <h1>Tokenpocalypse — firmy 3x ponad budget na AI tokeny, Linux Foundation reaguje</h1>
+  </header>
+  <div class="article-body">
+<h3>Co się stało</h3>
+
+<p>Między 5 a 7 czerwca 2026 TechCrunch opisał zjawisko określone jako „Tokenpocalypse”: firmy korzystające intensywnie z narzędzi AI zaczęły raportować nawet <strong>3x przebicie budżetów na tokeny AI</strong>, w wielu przypadkach już w kwietniu lub maju. Skala problemu doprowadziła do wprowadzania twardych limitów użycia, ograniczeń wewnętrznych, przechodzenia na lokalne modele oraz powstania nowej inicjatywy Linux Foundation: <strong>Tokenomics Foundation</strong>, która ma standaryzować pomiar kosztów AI.</p>
+
+<h3>Kontekst</h3>
+
+<p>Przez ostatnie lata organizacje traktowały dostęp do modeli przez API jako elastyczny zasób podobny do chmury: łatwy do uruchomienia, prosty do skalowania i trudny do dokładnego rozliczenia na poziomie pojedynczego zadania. W praktyce koszty tokenów AI zaczęły rosnąć szybciej niż zdolność firm do ich kontrolowania. Według opisu TechCrunch, problem nie dotyczy już pojedynczych eksperymentów czy prototypów, ale codziennego użycia narzędzi przez zespoły inżynieryjne i biznesowe.</p>
+
+<p>Najbardziej obrazowy przykład dotyczy Ubera. Inżynierowie mieli spalać <strong>$500-$2000/miesiąc</strong> na osobę, a firma w ciągu <strong>4 miesięcy</strong> wyczerpała przewidziany budżet. To pokazuje, że koszt AI przestał być tylko pozycją eksperymentalną w budżecie R&amp;D, a stał się regularnym kosztem operacyjnym, który może skalować się w sposób trudny do przewidzenia. J.R. Storment z FinOps Foundation opisał sytuację jako „<strong>3x ponad cały 2026 budget i to dopiero kwiecień</strong>”, co dobrze oddaje napięcie między planowaniem finansowym a tempem adopcji narzędzi AI.</p>
+
+<p>W reakcji na rosnący chaos kosztowy Linux Foundation ogłosił <strong>Tokenomics Foundation</strong>. Ma to być ciało standaryzujące pomiar kosztów AI, analogiczne do podejścia FinOps znanego z zarządzania kosztami chmury. Celem jest ujednolicenie metryk takich jak <strong>$/task</strong>, <strong>$/1M tokens</strong> i <strong>$/agent-run</strong>, czyli przejście od ogólnego rachunku za API do mierzenia kosztu konkretnej pracy wykonanej przez model lub agenta. Wsparcie dla inicjatywy zadeklarowały m.in. <strong>Anthropic, OpenAI, Uber i Salesforce</strong>, a specyfikacja ma pojawić się w <strong>Q3 2026</strong>.</p>
+
+<h3>Kluczowe liczby</h3>
+
+<ul>
+<li><strong>3x</strong> — skala przebicia budżetów na tokeny AI raportowana przez firmy według TechCrunch.</li>
+<li><strong>5-7 czerwca 2026</strong> — daty publikacji TechCrunch opisujących „Tokenpocalypse” i narastający problem rachunków za tokeny.</li>
+<li><strong>$500-$2000/miesiąc</strong> — szacowany koszt użycia AI na jednego inżyniera w Uberze.</li>
+<li><strong>4 miesiące</strong> — czas, w którym Uber miał wyczerpać budżet na użycie AI.</li>
+<li><strong>Q3 2026</strong> — planowany termin specyfikacji Tokenomics Foundation.</li>
+<li><strong>$30B/rok</strong> — run rate Claude API według Madrona z kwietnia 2026.</li>
+<li><strong>2,5x</strong> — wzrost Claude API run rate w Q1 według Madrona.</li>
+<li><strong>$15 mld/rok</strong> — kwota, jaką Anthropic ma płacić SpaceX za compute według przytoczonych danych.</li>
+<li><strong>$4B</strong> — wartość DeployCo, zespołów Forward Deployed Engineer po stronie OpenAI.</li>
+<li><strong>$1,5B</strong> — wartość Anthropic Services, zespołów Forward Deployed Engineer po stronie Anthropic.</li>
+</ul>
+<h3>Dlaczego to ważne</h3>
+
+<p>Najważniejsza zmiana polega na tym, że koszt AI przestaje być abstrakcyjną ceną za milion tokenów, a staje się kosztem konkretnego procesu: zadania, uruchomienia agenta, przetworzenia dokumentu, wygenerowania kodu lub wykonania serii operacji w narzędziu deweloperskim. Dopóki organizacje patrzyły tylko na łączny rachunek za API, łatwo było przeoczyć, które zastosowania są ekonomicznie uzasadnione, a które tylko wygodne. Model „użyjemy Claude/GPT do wszystkiego” zaczyna się załamywać, bo przy masowym wdrożeniu nawet pozornie tanie pojedyncze użycia mnożą się przez liczbę użytkowników, iteracji i automatycznych wywołań.</p>
+
+<p>Konsekwencje są już praktyczne. Firmy wprowadzają <strong>hard caps na AI usage</strong>, wewnętrzne limity oraz zastępują część zastosowań lokalnymi modelami zamiast API. Anthropic ograniczył Claude Code, co pokazuje, że presja kosztowa działa nie tylko po stronie klientów, ale też po stronie dostawców. Jeśli modele nie tanieją w tempie odpowiadającym wzrostowi użycia, skala adopcji zaczyna generować napięcie operacyjne: więcej użytkowników i agentów oznacza więcej tokenów, a więcej tokenów oznacza rachunki, które mogą przebić budżety jeszcze przed końcem pierwszej połowy roku.</p>
+
+<p>Dane Madrona z kwietnia 2026 wzmacniają ten obraz. Claude API osiągnął run rate <strong>$30B/rok</strong>, z <strong>2,5x</strong> wzrostem w Q1. Jednocześnie modele <strong>nie staniały</strong> w tempie użycia. Do tego dochodzi koszt infrastruktury: Anthropic ma płacić SpaceX <strong>$15 mld/rok</strong> za compute. Oznacza to, że ceny dla klientów nie mogą być analizowane wyłącznie jako prosty cennik API; są powiązane z bardzo dużymi kosztami obliczeniowymi po stronie dostawców. W tym kontekście powstawanie zespołów <strong>Forward Deployed Engineer</strong> — OpenAI z <strong>DeployCo $4B</strong> i Anthropic z <strong>Anthropic Services $1,5B</strong> — wskazuje, że rynek przesuwa się w stronę wdrożeń, optymalizacji i kontroli kosztów bezpośrednio u klientów, a nie tylko sprzedaży surowego dostępu do modeli.</p>
+
+<h3>Praktyczne rekomendacje</h3>
+
+<p>Dla zespołów technicznych, szczególnie w środowiskach STEM, podstawowa rekomendacja brzmi: należy przestać traktować modele Claude/GPT jako domyślną odpowiedź na każde zadanie. W Q2 roku podejście „użyjemy Claude/GPT do wszystkiego” staje się finansowo ryzykowne. Zamiast tego każda klasa zadań powinna mieć przypisany szacowany koszt per-task, czyli koszt wykonania pojedynczej operacji biznesowej lub technicznej. Sama metryka <strong>$/1M tokens</strong> jest przydatna, ale niewystarczająca, jeśli nie wiadomo, ile tokenów zużywa typowy workflow, ile razy jest powtarzany i ilu użytkowników z niego korzysta.</p>
+
+<p>Drugim obszarem jest architektura użycia modeli. W inputach, promptach, kontekście i odpowiedziach trzeba identyfikować miejsca, w których można ograniczyć liczbę tokenów bez utraty wartości. Wprost wracają do łask takie podejścia jak <strong>caching</strong> i <strong>distillation</strong>. Caching pozwala unikać ponownego płacenia za podobne lub identyczne przetwarzanie, a distillation może ograniczać zależność od najdroższych modeli w zadaniach, które nie zawsze wymagają maksymalnej jakości. Nie chodzi o rezygnację z modeli, ale o świadome dopasowanie klasy modelu i sposobu wywołania do wartości zadania.</p>
+
+<p>Trzecia rekomendacja dotyczy zarządzania. Organizacje powinny przygotować się na standardy rozliczania proponowane przez <strong>Tokenomics Foundation</strong>, zwłaszcza metryki <strong>$/task</strong>, <strong>$/1M tokens</strong> i <strong>$/agent-run</strong>. W praktyce oznacza to konieczność monitorowania kosztów nie tylko na poziomie dostawcy API, lecz także na poziomie produktu, zespołu, funkcji i typu workflow. Jeśli w firmie istnieją już praktyki FinOps dla chmury, analogiczna dyscyplina powinna zostać przeniesiona na AI. Różnica polega na tym, że w AI koszt może być ukryty w promptach, pętlach agentowych, automatycznych retry, dużych kontekstach i narzędziach programistycznych używanych codziennie przez inżynierów.</p>
+
+<p>Najbardziej praktyczny wniosek dla zespołów: <strong>prompt engineering 2024 → cost engineering 2026</strong>. Umiejętność napisania skutecznego promptu nadal ma znaczenie, ale nie wystarcza, jeśli rozwiązanie nie mieści się w budżecie przy realnym użyciu. Optymalizacja kosztowa staje się częścią projektowania systemów AI, podobnie jak wcześniej optymalizacja kosztów chmury stała się częścią projektowania systemów rozproszonych. Dobrze zaprojektowane wdrożenie AI powinno więc odpowiadać nie tylko na pytanie „czy działa?”, ale też „ile kosztuje pojedyncze zadanie?”, „czy koszt skaluje się liniowo z użyciem?” i „gdzie ustawiamy limity, zanim budżet zostanie zużyty w kwietniu lub maju?”.</p>
+<div class="sources"><h3>Źródła</h3><ul><li><a href="https://www.linuxfoundation.org/press/linux-foundation-launches-tokenomics-foundation" target="_blank" rel="noopener noreferrer">www.linuxfoundation.org/press/linux-foundation-launches-toke</a></li><li><a href="https://techcrunch.com/2026/06/07/is-this-the-dawn-of-the-tokenpocalypse" target="_blank" rel="noopener noreferrer">techcrunch.com/2026/06/07/is-this-the-dawn-of-the-tokenpocal</a></li><li><a href="https://www.madrona.com/price-of-tokenmaxxing-claude-explosive-growth-cost-of-intelligence" target="_blank" rel="noopener noreferrer">www.madrona.com/price-of-tokenmaxxing-claude-explosive-growt</a></li><li><a href="https://techcrunch.com/2026/06/05/the-token-bill-comes-due-inside-the-industry-scramble-to-manage-ais-runaway-costs" target="_blank" rel="noopener noreferrer">techcrunch.com/2026/06/05/the-token-bill-comes-due-inside-th</a></li></ul></div>
+  </div>
+  <footer class="article-footer">
+    <a href="/" class="back-link">← Wszystkie newsy</a>
+    <div class="discord-refs">
+      <span>Discord msg IDs:</span>
+      <code>1514505882317357119</code>
+    </div>
+  </footer>
+</article>
+</main>
+<footer class="footer">
+  <div class="container">
+    <p>STEM News · auto-publikowane z wątku Discord 1512398228384120864 · GitHub Actions daily</p>
+    <p class="muted">Rozszerzane przez <code>gpt-5.5-pro20x</code> (vsllm) · Vanilla HTML+CSS · GitHub Pages</p>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
