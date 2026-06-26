@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Google DiffusionGemma 26B — STEM News</title>
+<meta name="description" content="STEM News — codzienny przegląd AI, security, hardware i open source.">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link rel="alternate" type="application/rss+xml" title="STEM News RSS" href="/rss.xml">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+<body>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a href="/" class="logo"><span class="logo-bracket">[</span>stem<span class="logo-bracket">]</span></a>
+    <nav class="nav">
+      <a href="/?filter=all">Wszystkie</a>
+      <a href="/?filter=ai">AI/ML</a>
+      <a href="/?filter=security">Security</a>
+      <a href="/?filter=hardware">Hardware</a>
+      <a href="/?filter=opensource">Open source</a>
+      <a href="/rss.xml">RSS</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">◐</button>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <header class="article-header">
+    <div class="article-meta">
+      <span>2026-06-11</span>
+      <span>·</span>
+      <span>6 min czytania</span>
+      <span>·</span>
+      <span>4 źródeł</span>
+    </div>
+    <h1>Google DiffusionGemma 26B</h1>
+  </header>
+  <div class="article-body">
+<h3>Co się stało</h3>
+
+<p>Google DeepMind wydał 10 czerwca 2026 eksperymentalny model open-weights do generowania tekstu metodą text diffusion: DiffusionGemma 26B-A4B. Model jest zbudowany na Gemma 4 26B-A4B w architekturze MoE i według podanych benchmarków osiąga do 1000+ tok/s na H100 oraz około 700 tok/s na RTX 5090, co daje około 4x szybsze generowanie na dedykowanym GPU względem Gemma 4 w scenariuszu single-user, gdzie raportowane jest około 250 tok/s.</p>
+
+<p>Najważniejsza różnica względem klasycznych modeli autoregresyjnych polega na sposobie generowania: DiffusionGemma nie produkuje tekstu token po tokenie, ale pracuje na blokach tokenów równolegle, stopniowo je „odszumiając”. Google pozycjonuje model nie jako zamiennik najwyższej jakości generacji tekstu, lecz jako uzupełnienie Gemma 4 dla zastosowań interaktywnych, gdzie kluczowa jest szybkość odpowiedzi.</p>
+
+<h3>Kontekst</h3>
+
+<p>Dominujący sposób generowania tekstu w modelach językowych to autoregresja: model przewiduje kolejny token na podstawie wcześniejszych tokenów, a proces powtarza się sekwencyjnie. Taki tryb jest prosty koncepcyjnie i dobrze sprawdza się w zadaniach wymagających wysokiej jakości odpowiedzi, ale ma naturalne ograniczenie wydajnościowe: każdy kolejny fragment zależy od poprzedniego. W praktyce utrudnia to pełne równoleglenie generowania, szczególnie w scenariuszach, w których użytkownik oczekuje natychmiastowej reakcji systemu.</p>
+
+<p>Text diffusion podchodzi do problemu inaczej. Zamiast przewidywać tekst liniowo, token po tokenie, model operuje na blokach tokenów i iteracyjnie poprawia je w procesie przypominającym odszumianie. W podanym opisie kluczowe jest to, że DiffusionGemma może generować wiele tokenów równolegle, a nie wyłącznie w porządku sekwencyjnym. To właśnie ten mechanizm ma odpowiadać za wzrost przepustowości do 1000+ tok/s na H100 i około 700 tok/s na RTX 5090.</p>
+
+<p>Ważny jest też moment publikacji: Google DeepMind udostępnia model jako eksperymentalne open weights, z integracją w popularnych ścieżkach wdrożeniowych i narzędziowych. DiffusionGemma trafia do vLLM, NVIDIA NeMo, Google Cloud Model Garden oraz Hugging Face, a w NVIDIA NIM dostępna jest wersja o rozmiarze 9,54 GB compressed. To sugeruje, że projekt nie jest wyłącznie demonstracją badawczą, ale ma zostać przetestowany przez deweloperów w realnych przepływach pracy, zwłaszcza tam, gdzie opóźnienia i szybkość iteracji są ważniejsze niż maksymalna jakość finalnej odpowiedzi.</p>
+
+<h3>Kluczowe liczby</h3>
+
+<ul>
+<li>Data wydania: 10 czerwca 2026.</li>
+<li>Model bazowy i rozmiar: DiffusionGemma 26B-A4B, zbudowany na Gemma 4 26B-A4B w architekturze MoE.</li>
+<li>Parametry: 26B parametrów total, A4B aktywnych.</li>
+<li>Eksperci: 1 z 4 ekspertów aktywowany per token.</li>
+<li>Wydajność: do 1000+ tok/s na H100.</li>
+<li>Wydajność na karcie konsumenckiej: około 700 tok/s na RTX 5090.</li>
+<li>Punkt odniesienia: Gemma 4 w scenariuszu single-user osiąga około 250 tok/s.</li>
+<li>Deklarowany zysk: około 4x szybciej na dedykowanym GPU.</li>
+<li>Pamięć po kwantyzacji: około 18 GB VRAM, co mieści się w jednym RTX 5090.</li>
+<li>Rozmiar w NVIDIA NIM: 9,54 GB compressed.</li>
+<li>Zasięg komunikatu: post Google DeepMind miał 53,8K views w 24h.</li>
+</ul>
+<h3>Dlaczego to ważne</h3>
+
+<p>Najbardziej bezpośrednia implikacja dotyczy interaktywnych zastosowań modeli językowych. Google wskazuje speed-critical interactive workflows, czyli przepływy pracy, w których użytkownik nie chce czekać na długą sekwencyjną generację. Przykłady z inputu to in-line editing w IDE, code infilling oraz non-linear text. W takich zadaniach model często nie musi tworzyć długiej, finalnej odpowiedzi o maksymalnej jakości, lecz szybko uzupełnić fragment, zaproponować zmianę, poprawić blok tekstu albo wypełnić brakujący fragment kodu.</p>
+
+<p>Różnica względem autoregresji jest istotna również z punktu widzenia sposobu poprawiania tekstu. DiffusionGemma ma cechę określoną jako self-correction: model może cofnąć niskopewnościowy token i wykonać ponowne re-denoise. W klasycznej autoregresji po wygenerowaniu tokenu proces idzie dalej; model może później próbować skorygować sens wypowiedzi w kolejnych tokenach, ale nie iteruje tej samej pozycji w taki sam sposób. Tutaj założenie jest inne: model może pracować nad blokiem i lokalnie zmieniać elementy, które uzna za mniej pewne.</p>
+
+<p>To ma znaczenie dla edycji nieliniowej. W typowym środowisku pracy użytkownik rzadko pisze lub koduje wyłącznie od początku do końca. Często wraca do środka akapitu, modyfikuje fragment funkcji, uzupełnia lukę albo zmienia strukturę tekstu. Model, który naturalnie pracuje na blokach i może rewidować wcześniejsze pozycje w obrębie generowanego fragmentu, może lepiej pasować do takich interfejsów niż model, którego podstawowym trybem jest dopisywanie dalszego ciągu. Z tego powodu Google nie pozycjonuje DiffusionGemma jako następcy Gemma 4 w zadaniach max quality, lecz jako complement, czyli narzędzie uzupełniające dla innego profilu użycia.</p>
+
+<h3>Praktyczne rekomendacje</h3>
+
+<p>Najrozsądniejsze zastosowanie DiffusionGemma 26B-A4B to zadania, w których liczy się szybkość odpowiedzi i częsta interakcja z użytkownikiem. W praktyce oznacza to prototypowanie asystentów do IDE, uzupełnianie kodu, poprawki inline, szybkie wariantowanie krótkich fragmentów oraz edycję tekstu w trybie nieliniowym. Jeśli system ma reagować w bardzo krótkim czasie i generować relatywnie krótkie bloki, deklarowane do 1000+ tok/s na H100 oraz około 700 tok/s na RTX 5090 są parametrami, które warto zweryfikować we własnym środowisku.</p>
+
+<p>Jednocześnie nie należy traktować tego modelu jako domyślnego wyboru dla zadań wymagających maksymalnej jakości. Wprost wskazano, że DiffusionGemma nie jest przeznaczona do zadań max quality; w tym obszarze zostaje Gemma 4. Sensowny podział ról wygląda więc następująco: DiffusionGemma dla szybkich interakcji i operacji edycyjnych, Gemma 4 dla zadań, gdzie jakość końcowa jest ważniejsza niż przepustowość. Taki model wdrożenia ogranicza ryzyko użycia szybszego narzędzia w scenariuszach, do których nie zostało pozycjonowane.</p>
+
+<p>Warto też zwrócić uwagę na wymagania wdrożeniowe. Po kwantyzacji model ma potrzebować około 18 GB VRAM, co według podanych danych mieści się w jednym RTX 5090. To otwiera drogę do testów na pojedynczym dedykowanym GPU, bez konieczności od razu budowania większej infrastruktury. Dostępność przez vLLM, NVIDIA NeMo, Google Cloud Model Garden, Hugging Face oraz NVIDIA NIM powinna ułatwić porównania między lokalnym uruchomieniem, środowiskiem chmurowym i gotowymi kontenerami.</p>
+
+<p>Przy ewaluacji nie wystarczy jednak patrzeć wyłącznie na tok/s. Ponieważ model ma inny mechanizm generowania, testy powinny obejmować konkretne interakcje produktowe: opóźnienie od akcji użytkownika do pierwszej użytecznej propozycji, stabilność poprawek inline, zachowanie przy code infilling oraz jakość nieliniowych zmian tekstu. Szczególnie interesujący jest przypadek fine-tune Sudoku, gdzie pojawiło się emergentne zachowanie „rethink this square”. Z inputu wynika, że autoregresyjne modele nie iterują tej samej pozycji, więc to zachowanie warto traktować jako sygnał, że text diffusion może mieć inne właściwości przy problemach wymagających rewizji lokalnej decyzji.</p>
+
+<p>Ostrożność jest wskazana także dlatego, że model jest opisany jako eksperymentalny. Open weights i integracje narzędziowe ułatwiają testy, ale nie zmieniają faktu, że należy sprawdzać go zadaniowo, a nie zakładać automatycznej przewagi w każdym benchmarku produktowym. Jeśli priorytetem jest jakość końcowa odpowiedzi, pozostaje Gemma 4. Jeśli priorytetem jest szybka edycja, uzupełnianie i interakcja w czasie pracy użytkownika, DiffusionGemma 26B-A4B jest kandydatem do osobnej ścieżki ewaluacyjnej.</p>
+<div class="sources"><h3>Źródła</h3><ul><li><a href="https://www.marktechpost.com/2026/06/10/google-ai-releases-diffusiongemma-a-26b-moe-open-model-using-text-diffusion-for-up-to-4x-faster-generation" target="_blank" rel="noopener noreferrer">www.marktechpost.com/2026/06/10/google-ai-releases-diffusion</a></li><li><a href="https://gigazine.net/gsc_news/en/20260611-google-ai-diffusiongemma" target="_blank" rel="noopener noreferrer">gigazine.net/gsc_news/en/20260611-google-ai-diffusiongemma</a></li><li><a href="https://the-decoder.com/googles-new-open-model-diffusiongemma-generates-text-from-noise-instead-of-word-by-word" target="_blank" rel="noopener noreferrer">the-decoder.com/googles-new-open-model-diffusiongemma-genera</a></li><li><a href="https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation" target="_blank" rel="noopener noreferrer">blog.google/innovation-and-ai/technology/developers-tools/di</a></li></ul></div>
+  </div>
+  <footer class="article-footer">
+    <a href="/" class="back-link">← Wszystkie newsy</a>
+    <div class="discord-refs">
+      <span>Discord msg IDs:</span>
+      <code>1514505837526126753</code>
+    </div>
+  </footer>
+</article>
+</main>
+<footer class="footer">
+  <div class="container">
+    <p>STEM News · auto-publikowane z wątku Discord 1512398228384120864 · GitHub Actions daily</p>
+    <p class="muted">Rozszerzane przez <code>gpt-5.5-pro20x</code> (vsllm) · Vanilla HTML+CSS · GitHub Pages</p>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -6,6 +6,30 @@
     <description>Codzienny przegląd AI, security, hardware i open source.</description>
     <language>pl</language>
     <item>
+      <title>AMD MI400 + Helios</title>
+      <link>https://kamciosz.github.io/news/amd-pozycjonuje-mi400-oraz-platforme-helios-jako-najpowazniejsza-w-ostatnich-3-l.html</link>
+      <guid>https://kamciosz.github.io/news/amd-pozycjonuje-mi400-oraz-platforme-helios-jako-najpowazniejsza-w-ostatnich-3-l.html</guid>
+      <pubDate>2026-06-09T11:56:10.316000+00:00</pubDate>
+      <description>
+
+AMD pozycjonuje MI400 oraz platformę Helios jako najpoważniejszą w ostatnich 3 latach próbę przełamania dominacji NVIDIA w rynku AI hardware. Stawką nie jest wyłącznie kolejny akcelerator, ale alternatywny model infrastruktury dla centrów danych AI: bardziej otwarty, mniej zależny od CUDA i potencjalnie atrakcyjny dla hyperscalerów, deweloperów oraz klientów regulowanych.
+
+
+
+Rynek infrastruktury AI przez ostatnie lata był silnie skoncentrowany wokół NVIDIA. Dla duży</description>
+    </item>
+    <item>
+      <title>Google DiffusionGemma 26B</title>
+      <link>https://kamciosz.github.io/news/google-diffusiongemma-26b.html</link>
+      <guid>https://kamciosz.github.io/news/google-diffusiongemma-26b.html</guid>
+      <pubDate>2026-06-11T05:45:29.824000+00:00</pubDate>
+      <description>
+
+Google DeepMind wydał 10 czerwca 2026 eksperymentalny model open-weights do generowania tekstu metodą text diffusion: DiffusionGemma 26B-A4B. Model jest zbudowany na Gemma 4 26B-A4B w architekturze MoE i według podanych benchmarków osiąga do 1000+ tok/s na H100 oraz około 700 tok/s na RTX 5090, co daje około 4x szybsze generowanie na dedykowanym GPU względem Gemma 4 w scenariuszu single-user, gdzie raportowane jest około 250 tok/s.
+
+Najważniejsza różnica względem klasycznych mo</description>
+    </item>
+    <item>
       <title>Meta + Reliance — pierwszy AI data center w Indiach, 168 MW + 1 GW OZE</title>
       <link>https://kamciosz.github.io/news/meta-reliance-pierwszy-ai-data-center-w-indiach-168-mw-1-gw-oze.html</link>
       <guid>https://kamciosz.github.io/news/meta-reliance-pierwszy-ai-data-center-w-indiach-168-mw-1-gw-oze.html</guid>
